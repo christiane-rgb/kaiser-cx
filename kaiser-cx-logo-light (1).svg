@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="400" height="400">
+  <rect width="180" height="180" fill="#f8f9fb"/>
+  <!-- K -->
+  <line x1="18" y1="25" x2="18" y2="135" stroke="#0f4a6e" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="18" y1="80" x2="48" y2="25" stroke="#1e6a9a" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="18" y1="80" x2="48" y2="135" stroke="#0f4a6e" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- C -->
+  <line x1="94" y1="25" x2="70" y2="42" stroke="#0f4a6e" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="70" y1="42" x2="70" y2="118" stroke="#1e6a9a" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="70" y1="118" x2="94" y2="135" stroke="#0f4a6e" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- X -->
+  <line x1="108" y1="25" x2="162" y2="135" stroke="#0f4a6e" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="162" y1="25" x2="108" y2="135" stroke="#1e6a9a" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Subline -->
+  <text x="90" y="165" font-family="Arial, sans-serif" font-size="9" font-weight="300" letter-spacing="5" fill="#0f4a6e" text-anchor="middle">KAISER CX</text>
+</svg>
