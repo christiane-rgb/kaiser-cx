@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="4;url=control.html">
+<title>AI Essentials is now CONTROL · Kaiser CX</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Sora', sans-serif;
+  background: linear-gradient(to right, #0f3d5c, #1e6a9a, #3a8fc0);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+h1 strong {
+  font-weight: 700;
+  color: #5ecfdc;
+}
+
+.sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.45);
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #5ecfdc;
+  color: #0f3d5c;
+  text-decoration: none;
+  padding: 1rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+
+.btn:hover { opacity: 0.9; }
+
+.countdown {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.25);
+}
+</style>
+</head>
+<body>
+  <p class="label">Kaiser CX · Product Update</p>
+  <h1>AI Essentials is now <strong>CONTROL.</strong></h1>
+  <p class="sub">Same thinking. Better system. Built to move NRR.</p>
+  <a href="control.html" class="btn">Go to CONTROL →</a>
+  <p class="countdown">You'll be redirected automatically in a few seconds.</p>
+</body>
+</html>
