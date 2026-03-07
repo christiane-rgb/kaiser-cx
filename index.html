@@ -6,806 +6,812 @@
 <title>CONTROL by Kaiser CX</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --blue-dark: #0f3d5c;
-  --blue-mid: #1e6a9a;
-  --blue-light: #3a8fc0;
-  --teal: #5ecfdc;
-  --teal-dim: rgba(94,207,220,0.12);
-  --white: #ffffff;
-  --light-bg: #f8f9fb;
-  --ink: #0f1923;
-  --ink-mid: #4b5563;
-  --ink-light: #9ca3af;
-  --border-light: rgba(15,25,35,0.08);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Sora', sans-serif; color: var(--ink); font-size: 16px; line-height: 1.6; background: var(--light-bg); }
-
-/* NAV */
-nav {
-  background: #0a3550;
-  padding: 0 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-logo {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: white;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-}
-
-.nav-logo span { color: var(--teal); }
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover { color: var(--teal); }
-
-/* HERO */
-.hero {
-  background: linear-gradient(to right, #0f3d5c 0%, #1e6a9a 50%, #3a8fc0 100%);
-  padding: 80px 6% 100px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -150px; right: -100px;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(94,207,220,0.07) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 80px;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
-  margin-bottom: 2.5rem;
-}
-
-.hero-eyebrow::before {
-  content: '';
-  width: 7px; height: 7px;
-  background: var(--teal);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.hero h1 {
-  font-size: clamp(2.2rem, 3.2vw, 3.2rem);
-  font-weight: 600;
-  line-height: 1.1;
-  color: white;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.2rem;
-}
-
-.hero h1 span {
-  color: var(--teal);
-  display: block;
-}
-
-.hero-sub {
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.75);
-  font-weight: 300;
-  margin-bottom: 2.5rem;
-  line-height: 1.6;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: var(--teal);
-  color: #0f3d5c;
-  text-decoration: none;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 2px;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-
-.btn-ghost {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.5);
-  text-decoration: none;
-  font-weight: 400;
-  transition: color 0.2s;
-}
-
-.btn-ghost:hover { color: var(--teal); }
-
-.hero-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: rgba(255,255,255,0.2);
-}
-
-.stat-card {
-  background: rgba(255,255,255,0.93);
-  padding: 1.6rem 2rem;
-  display: flex;
-  gap: 1.4rem;
-  align-items: center;
-  border-left: 2px solid transparent;
-  transition: border-color 0.2s;
-}
-
-.stat-card:hover { border-color: #0f3d5c; }
-
-.stat-number {
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: #0f3d5c;
-  line-height: 1;
-  min-width: 80px;
-  flex-shrink: 0;
-  letter-spacing: -0.02em;
-}
-
-.stat-text {
-  font-size: 1rem;
-  color: #1a3a4a;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-/* PROBLEM */
-.problem {
-  background: #e8f4f8;
-  padding: 70px 6%;
-  border-top: 1px solid rgba(15,61,92,0.1);
-  border-bottom: 1px solid rgba(15,61,92,0.1);
-}
-
-.problem-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.problem h2 {
-  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
-  font-weight: 500;
-  line-height: 1.2;
-  color: #0f3d5c;
-  letter-spacing: -0.02em;
-}
-
-.problem h2 em {
-  font-style: normal;
-  color: rgba(15,61,92,0.4);
-}
-
-.problem-list { list-style: none; }
-
-.problem-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  font-size: 0.95rem;
-  color: #2d4a5a;
-  font-weight: 300;
-  line-height: 1.5;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(15,61,92,0.1);
-}
-
-.problem-list li:last-child { border-bottom: none; }
-
-.problem-list li::before {
-  content: '↳';
-  color: var(--teal);
-  flex-shrink: 0;
-}
-
-/* WHAT */
-.what {
-  background: white;
-  padding: 90px 6%;
-}
-
-.what-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--teal);
-  font-weight: 500;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.section-label::before {
-  content: '';
-  width: 20px; height: 2px;
-  background: var(--teal);
-}
-
-.what h2 {
-  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
-  color: var(--ink);
-}
-
-.what p {
-  font-size: 0.95rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  line-height: 1.75;
-  margin-bottom: 1rem;
-}
-
-.what-points {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--border-light);
-}
-
-.what-point {
-  background: var(--light-bg);
-  padding: 1.4rem 1.6rem;
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  border-left: 2px solid transparent;
-  transition: border-color 0.2s;
-}
-
-.what-point:hover { border-color: var(--teal); }
-
-.what-point-icon {
-  width: 34px; height: 34px;
-  background: var(--teal-dim);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--teal);
-}
-
-.what-point-icon svg { width: 16px; height: 16px; }
-
-.what-point-text strong {
-  display: block;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 0.2rem;
-}
-
-.what-point-text span {
-  font-size: 0.85rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  line-height: 1.5;
-}
-
-/* PILOTS */
-.pilots {
-  background: var(--light-bg);
-  padding: 90px 6%;
-}
-
-.pilots-inner { max-width: 1200px; margin: 0 auto; }
-
-.pilots-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.pilots h2 {
-  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.pilots-sub {
-  font-size: 0.9rem;
-  color: var(--ink-light);
-  font-weight: 300;
-  max-width: 300px;
-  text-align: right;
-  line-height: 1.5;
-}
-
-.pilots-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--border-light);
-}
-
-.pilot-card {
-  background: white;
-  padding: 2rem 2rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.2s;
-}
-
-.pilot-card:hover {
-  box-shadow: 0 0 0 1px var(--teal);
-  z-index: 1;
-}
-
-.pilot-card-wide { grid-column: 1 / -1; }
-
-.pilot-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-}
-
-.pilot-tag {
-  display: inline-block;
-  background: var(--teal-dim);
-  color: var(--teal);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
-  padding: 0.3rem 0.7rem;
-  border-radius: 2px;
-}
-
-.pilot-number {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--ink-light);
-  letter-spacing: 0.08em;
-}
-
-.pilot-card h3 {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  margin-bottom: 0.7rem;
-}
-
-.pilot-card > p {
-  font-size: 0.9rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.pilot-delivers {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  flex: 1;
-}
-
-.pilot-delivers li {
-  font-size: 0.86rem;
-  color: var(--ink-mid);
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  line-height: 1.45;
-}
-
-.pilot-delivers li::before {
-  content: '✓';
-  color: var(--teal);
-  font-weight: 500;
-  flex-shrink: 0;
-  font-size: 0.8rem;
-}
-
-.pilot-card-wide .pilot-delivers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem 3rem;
-}
-
-.pilot-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 1.2rem;
-  border-top: 1px solid var(--border-light);
-  margin-top: auto;
-}
-
-.pilot-timeframe {
-  font-size: 0.8rem;
-  color: var(--ink-light);
-}
-
-.pilot-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--teal);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: gap 0.2s;
-}
-
-.pilot-cta:hover { gap: 0.7rem; }
-
-/* HOW */
-.how {
-  background: white;
-  padding: 90px 6%;
-}
-
-.how-inner { max-width: 1200px; margin: 0 auto; }
-
-.how h2 {
-  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
-  color: var(--ink);
-}
-
-.how-intro {
-  font-size: 0.95rem;
-  color: var(--ink-light);
-  font-weight: 300;
-  margin-bottom: 3rem;
-}
-
-.how-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border-light);
-}
-
-.how-step {
-  background: var(--light-bg);
-  padding: 2rem;
-}
-
-.how-step-num {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--teal);
-  margin-bottom: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.how-step-num::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--teal-dim);
-}
-
-.how-step h4 {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 0.6rem;
-}
-
-.how-step p {
-  font-size: 0.88rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  line-height: 1.65;
-}
-
-/* ABOUT */
-.about {
-  background: var(--light-bg);
-  padding: 90px 6%;
-}
-
-.about-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.about h2 {
-  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
-  color: var(--ink);
-  line-height: 1.2;
-}
-
-.about p {
-  font-size: 0.95rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  line-height: 1.75;
-  margin-bottom: 1rem;
-}
-
-.about-clients {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-light);
-}
-
-.about-clients-label {
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-light);
-  margin-bottom: 0.8rem;
-  font-weight: 500;
-}
-
-.client-names {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.client-name {
-  font-size: 0.8rem;
-  color: var(--ink-mid);
-  padding: 0.3rem 0.7rem;
-  background: white;
-  border: 1px solid var(--border-light);
-  font-weight: 500;
-  border-radius: 2px;
-}
-
-.credentials {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--border-light);
-}
-
-.credential {
-  background: white;
-  padding: 1.3rem 1.5rem;
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  border-left: 2px solid transparent;
-  transition: border-color 0.2s;
-}
-
-.credential:hover { border-color: var(--teal); }
-
-.credential-icon {
-  width: 32px; height: 32px;
-  background: var(--teal-dim);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--teal);
-}
-
-.credential-icon svg { width: 15px; height: 15px; }
-
-.credential-text strong {
-  display: block;
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 0.2rem;
-}
-
-.credential-text span {
-  font-size: 0.83rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  line-height: 1.4;
-}
-
-/* CTA */
-.cta-section {
-  background: linear-gradient(to right, #0f3d5c 0%, #1e6a9a 50%, #3a8fc0 100%);
-  padding: 100px 6%;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px; height: 400px;
-  background: radial-gradient(ellipse, rgba(94,207,220,0.08) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.cta-section h2 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 500;
-  color: white;
-  margin-bottom: 1rem;
-  letter-spacing: -0.03em;
-  position: relative;
-}
-
-.cta-section h2 span { color: var(--teal); }
-
-.cta-section p {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.5);
-  font-weight: 300;
-  max-width: 420px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.7;
-  position: relative;
-}
-
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: var(--teal);
-  color: #0f3d5c;
-  text-decoration: none;
-  padding: 1rem 2.2rem;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 2px;
-  transition: opacity 0.2s, transform 0.2s;
-  position: relative;
-}
-
-.cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
-
-.cta-note {
-  margin-top: 1.2rem;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.25);
-  position: relative;
-}
-
-.cta-note a { color: rgba(255,255,255,0.4); }
-
-/* FOOTER */
-footer {
-  background: #071f30;
-  color: rgba(255,255,255,0.3);
-  padding: 1.8rem 6%;
-  font-size: 0.8rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-logo {
-  font-weight: 600;
-  color: rgba(255,255,255,0.7);
-  letter-spacing: 0.06em;
-  font-size: 0.88rem;
-}
-
-.footer-logo span { color: var(--teal); }
-
-/* RESPONSIVE */
-@media (max-width: 780px) {
-  .hero-inner, .problem-inner, .what-inner,
-  .pilots-grid, .how-steps, .about-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .hero-stats { display: none; }
-  .pilots-sub { text-align: left; }
-  .pilot-card-wide .pilot-delivers { grid-template-columns: 1fr; }
-  nav { padding: 0 4%; }
-  .nav-links { gap: 1rem; }
-}
+  :root {
+    --dark: #0f2a35;
+    --dark-2: #111827;
+    --dark-3: #1a2436;
+    --hero-from: #2d6a7f;
+    --hero-to: #1a4a5c;
+    --teal: #5ecfdc;
+    --teal-dim: rgba(94, 207, 220, 0.12);
+    --teal-glow: rgba(94, 207, 220, 0.2);
+    --white: #ffffff;
+    --off-white: #f4f6f8;
+    --light-bg: #f8f9fb;
+    --ink: #0f1923;
+    --ink-mid: #4b5563;
+    --ink-light: #9ca3af;
+    --border-dark: rgba(255,255,255,0.1);
+    --border-light: rgba(15, 25, 35, 0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    background: var(--light-bg);
+  }
+
+  /* HERO — DARK */
+  .hero {
+    background: linear-gradient(to right, #0f3d5c 0%, #1e6a9a 50%, #3a8fc0 100%);
+    padding: 60px 6% 90px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -150px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(94,207,220,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 3.5rem;
+    width: fit-content;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--teal);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+  }
+
+  .hero h1 span {
+    color: var(--teal);
+  }
+
+  .hero-timeframe {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+    margin-bottom: 1.8rem;
+    display: block;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--teal);
+    color: #0f3d5c;
+    text-decoration: none;
+    padding: 0.85rem 1.8rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 2px;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-primary svg { width: 14px; height: 14px; }
+
+  .btn-ghost {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .btn-ghost:hover { color: var(--teal); }
+
+  /* HERO RIGHT — STATS */
+  .hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(255,255,255,0.2);
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.92);
+    padding: 1.4rem 1.8rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    border-left: 2px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .stat-card:hover {
+    border-color: #0f3d5c;
+    background: white;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #0f3d5c;
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 60px;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-text {
+    font-size: 0.9rem;
+    color: #1a3a4a;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* PROBLEM BAND */
+  .problem {
+    background: #e8f4f8;
+    padding: 60px 6%;
+    border-top: 1px solid rgba(15,61,92,0.1);
+    border-bottom: 1px solid rgba(15,61,92,0.1);
+  }
+
+  .problem-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .problem h2 {
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.2;
+    color: #0f3d5c;
+    letter-spacing: -0.02em;
+  }
+
+  .problem h2 em {
+    font-style: normal;
+    color: rgba(15,61,92,0.4);
+  }
+
+  .problem-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .problem-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: #2d4a5a;
+    font-weight: 300;
+    line-height: 1.5;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(15,61,92,0.1);
+  }
+
+  .problem-list li:last-child { border-bottom: none; }
+
+  .problem-list li::before {
+    content: '↳';
+    color: var(--teal);
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    margin-top: 0.1rem;
+  }
+
+  /* WHAT IS CONTROL */
+  .what {
+    background: var(--white);
+    padding: 80px 6%;
+  }
+
+  .what-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 20px; height: 2px;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+
+  .what h2 {
+    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+    color: var(--ink);
+  }
+
+  .what p {
+    font-size: 0.92rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .what-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-light);
+  }
+
+  .what-point {
+    background: var(--light-bg);
+    padding: 1.3rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    border-left: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .what-point:hover { border-color: var(--teal); }
+
+  .what-point-icon {
+    width: 32px; height: 32px;
+    background: var(--teal-dim);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--teal);
+  }
+
+  .what-point-icon svg { width: 15px; height: 15px; }
+
+  .what-point-text strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .what-point-text span {
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* PILOTS */
+  .pilots {
+    background: var(--light-bg);
+    padding: 80px 6%;
+  }
+
+  .pilots-inner { max-width: 1100px; margin: 0 auto; }
+
+  .pilots-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .pilots h2 {
+    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .pilots-sub {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    font-weight: 300;
+    max-width: 300px;
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  .pilots-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-light);
+  }
+
+  .pilot-card {
+    background: var(--white);
+    padding: 2rem 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+
+  .pilot-card:hover {
+    box-shadow: 0 0 0 1px var(--teal);
+    z-index: 1;
+  }
+
+  .pilot-card-wide { grid-column: 1 / -1; }
+
+  .pilot-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .pilot-tag {
+    display: inline-block;
+    background: var(--teal-dim);
+    color: var(--teal);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.28rem 0.7rem;
+    border-radius: 2px;
+  }
+
+  .pilot-number {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+  }
+
+  .pilot-card h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.7rem;
+    line-height: 1.2;
+  }
+
+  .pilot-card > p {
+    font-size: 0.86rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .pilot-delivers {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex: 1;
+  }
+
+  .pilot-delivers li {
+    font-size: 0.83rem;
+    color: var(--ink-mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    line-height: 1.45;
+  }
+
+  .pilot-delivers li::before {
+    content: '✓';
+    color: var(--teal);
+    font-weight: 500;
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    margin-top: 0.1rem;
+  }
+
+  .pilot-card-wide .pilot-delivers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 3rem;
+  }
+
+  .pilot-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border-light);
+    margin-top: auto;
+  }
+
+  .pilot-timeframe {
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    font-weight: 400;
+  }
+
+  .pilot-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--teal);
+    text-decoration: none;
+    font-size: 0.83rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: gap 0.2s;
+  }
+
+  .pilot-cta:hover { gap: 0.7rem; }
+
+  /* HOW */
+  .how {
+    background: var(--white);
+    padding: 80px 6%;
+  }
+
+  .how-inner { max-width: 1100px; margin: 0 auto; }
+
+  .how h2 {
+    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .how-intro {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border-light);
+  }
+
+  .how-step {
+    background: var(--light-bg);
+    padding: 2rem;
+    position: relative;
+  }
+
+  .how-step-num {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--teal);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .how-step-num::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--teal-dim);
+  }
+
+  .how-step h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  .how-step p {
+    font-size: 0.84rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--light-bg);
+    padding: 80px 6%;
+  }
+
+  .about-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about h2 {
+    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .about p {
+    font-size: 0.9rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .about-clients {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .about-clients-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+  }
+
+  .client-names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .client-name {
+    font-size: 0.78rem;
+    color: var(--ink-mid);
+    padding: 0.28rem 0.7rem;
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    font-weight: 500;
+    border-radius: 2px;
+  }
+
+  .credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-light);
+  }
+
+  .credential {
+    background: var(--white);
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    border-left: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .credential:hover { border-color: var(--teal); }
+
+  .credential-icon {
+    width: 30px; height: 30px;
+    background: var(--teal-dim);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--teal);
+  }
+
+  .credential-icon svg { width: 14px; height: 14px; }
+
+  .credential-text strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+  }
+
+  .credential-text span {
+    font-size: 0.8rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(to right, #0f3d5c 0%, #1e6a9a 50%, #3a8fc0 100%);
+    padding: 90px 6%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(94,207,220,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+    position: relative;
+  }
+
+  .cta-section h2 span { color: var(--teal); }
+
+  .cta-section p {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    max-width: 420px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    position: relative;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--teal);
+    color: #0f3d5c;
+    text-decoration: none;
+    padding: 0.95rem 2rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 2px;
+    transition: opacity 0.2s, transform 0.2s;
+    position: relative;
+  }
+
+  .cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+  .cta-note {
+    margin-top: 1.2rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+    position: relative;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #071f30;
+    color: rgba(255,255,255,0.3);
+    padding: 1.6rem 6%;
+    font-size: 0.78rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+  }
+
+  .footer-logo span { color: var(--teal); }
+
+  /* RESPONSIVE */
+  @media (max-width: 780px) {
+    .hero-inner, .problem-inner, .what-inner,
+    .pilots-grid, .how-steps, .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-stats { display: none; }
+    .pilots-sub { text-align: left; }
+    .pilot-card-wide .pilot-delivers { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">KAISER <span>CX</span></a>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="control.html">CONTROL</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="#kontakt">Contact</a></li>
-  </ul>
-</nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div>
       <div class="hero-eyebrow">CONTROL · CS Operating System</div>
-      <h1>We turn your CS team<br>into your fastest<br><span>growth lever.</span></h1>
-      <p class="hero-sub">In 8 weeks. No new headcount. No new platform.</p>
+      <h1>We turn your CS team into your <span>fastest growth lever.</span></h1>
+      <span class="hero-timeframe">In 8 weeks. No new headcount. No new platform.</span>
+      <p class="hero-sub">Most CS teams work hard — but on the wrong accounts at the wrong time. CONTROL fixes that: clear signals, automated actions, measurable impact. Built into the systems you already use.</p>
       <div class="hero-actions">
-        <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="btn-primary">Start a pilot →</a>
+        <a href="#kontakt" class="btn-primary">
+          Start a pilot
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
         <a href="#piloten" class="btn-ghost">See the pilots →</a>
       </div>
     </div>
@@ -833,25 +839,27 @@ footer {
     <ul class="problem-list">
       <li>Churn hits without warning. Every time.</li>
       <li>Upsell opportunities stay hidden until it's too late.</li>
-      <li>Low-touch accounts fall through the cracks because there's no bandwidth.</li>
-      <li>CSMs are reacting — not steering.</li>
+      <li>Low-touch accounts fall through the cracks because there's no bandwidth</li>
+      <li>CSMs are reacting — not steering</li>
     </ul>
   </div>
 </div>
 
-<!-- WHAT -->
+<!-- WHAT IS CONTROL -->
 <section class="what">
   <div class="what-inner">
     <div>
       <div class="section-label">What is CONTROL</div>
       <h2>Not another platform.<br>A system built into yours.</h2>
       <p>CONTROL is a CS operating system that turns scattered signals into automated, prioritized actions — inside the CRM your team already uses every day.</p>
-      <p>No migration. No onboarding. No new tool to maintain. Just logic, automation, and clarity.</p>
+      <p>No migration. No onboarding. No new tool to maintain. Just logic, automation, and clarity — so your CSMs spend time on what actually moves the needle.</p>
     </div>
     <div class="what-points">
       <div class="what-point">
         <div class="what-point-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/>
+          </svg>
         </div>
         <div class="what-point-text">
           <strong>Right account, right time</strong>
@@ -860,7 +868,9 @@ footer {
       </div>
       <div class="what-point">
         <div class="what-point-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M10 4l4 4-4 4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 8h12M10 4l4 4-4 4"/>
+          </svg>
         </div>
         <div class="what-point-text">
           <strong>Action, not just insight</strong>
@@ -869,7 +879,9 @@ footer {
       </div>
       <div class="what-point">
         <div class="what-point-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="1" width="14" height="14" rx="1"/><path d="M5 8l3 3 4-5"/></svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="1" width="14" height="14" rx="1"/><path d="M5 8l3 3 4-5"/>
+          </svg>
         </div>
         <div class="what-point-text">
           <strong>Zero new tools</strong>
@@ -890,7 +902,9 @@ footer {
       </div>
       <p class="pilots-sub">Not a year-long engagement. You know exactly what you get — and when.</p>
     </div>
+
     <div class="pilots-grid">
+
       <div class="pilot-card">
         <div class="pilot-top">
           <div class="pilot-tag">Pilot 01</div>
@@ -906,9 +920,10 @@ footer {
         </ul>
         <div class="pilot-footer">
           <span class="pilot-timeframe">Remote · 4–6 weeks</span>
-          <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="pilot-cta">Book a call →</a>
+          <a href="#kontakt" class="pilot-cta">Book a call →</a>
         </div>
       </div>
+
       <div class="pilot-card">
         <div class="pilot-top">
           <div class="pilot-tag">Pilot 02</div>
@@ -924,9 +939,10 @@ footer {
         </ul>
         <div class="pilot-footer">
           <span class="pilot-timeframe">Remote · 4–6 weeks</span>
-          <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="pilot-cta">Book a call →</a>
+          <a href="#kontakt" class="pilot-cta">Book a call →</a>
         </div>
       </div>
+
       <div class="pilot-card pilot-card-wide">
         <div class="pilot-top">
           <div class="pilot-tag">Pilot 03</div>
@@ -942,15 +958,16 @@ footer {
         </ul>
         <div class="pilot-footer">
           <span class="pilot-timeframe">Remote · 4–6 weeks</span>
-          <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="pilot-cta">Book a call →</a>
+          <a href="#kontakt" class="pilot-cta">Book a call →</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- HOW -->
-<section class="how">
+<section class="how" id="vorgehen">
   <div class="how-inner">
     <div class="section-label">How it works</div>
     <h2>Structured from week one.</h2>
@@ -981,7 +998,7 @@ footer {
     <div>
       <div class="section-label">Why CONTROL works</div>
       <h2>CS strategy + technical implementation.<br>Both in-house.</h2>
-      <p>CONTROL is built on deep CS operational experience and technical automation expertise. Not a consulting deck — a system that gets built, tested, and handed over ready to run.</p>
+      <p>CONTROL is built on deep CS operational experience and technical automation expertise. Not a consulting deck handed over after a workshop — a system that gets built, tested, and handed over ready to run.</p>
       <p>The methodology comes from scaling CS organisations through real growth stages. The automation is built by specialists who implement workflow systems every day.</p>
       <div class="about-clients">
         <div class="about-clients-label">Built with experience from</div>
@@ -989,7 +1006,7 @@ footer {
           <span class="client-name">Brandwatch</span>
         </div>
       </div>
-      <div class="about-clients" style="margin-top:1rem;">
+      <div class="about-clients" style="margin-top: 1rem;">
         <div class="about-clients-label">Implemented at</div>
         <div class="client-names">
           <span class="client-name">Qualiwise</span>
@@ -1001,7 +1018,9 @@ footer {
     <div class="credentials">
       <div class="credential">
         <div class="credential-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="2" width="14" height="12" rx="1"/><path d="M4 6h8M4 9h5"/></svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="2" width="14" height="12" rx="1"/><path d="M4 6h8M4 9h5"/>
+          </svg>
         </div>
         <div class="credential-text">
           <strong>CS operations, not theory</strong>
@@ -1010,7 +1029,9 @@ footer {
       </div>
       <div class="credential">
         <div class="credential-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M10 4l4 4-4 4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 8h12M10 4l4 4-4 4"/>
+          </svg>
         </div>
         <div class="credential-text">
           <strong>Automation that actually ships</strong>
@@ -1019,7 +1040,9 @@ footer {
       </div>
       <div class="credential">
         <div class="credential-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/>
+          </svg>
         </div>
         <div class="credential-text">
           <strong>8 weeks, not 8 months</strong>
@@ -1028,7 +1051,9 @@ footer {
       </div>
       <div class="credential">
         <div class="credential-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 1l1.8 5H15l-4.5 3.3 1.7 5.2L8 11.5l-4.2 3 1.7-5.2L1 6h5.2z"/></svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 1l1.8 5H15l-4.5 3.3 1.7 5.2L8 11.5l-4.2 3 1.7-5.2L1 6h5.2z"/>
+          </svg>
         </div>
         <div class="credential-text">
           <strong>Built for your existing stack</strong>
@@ -1043,10 +1068,15 @@ footer {
 <section class="cta-section" id="kontakt">
   <h2>Ready to turn CS into a <span>growth lever?</span></h2>
   <p>30 minutes. No sales pitch. I'll look at your setup and tell you honestly whether a pilot makes sense.</p>
-  <a href="https://calendly.com/christiane-kaiser-cx/30min" class="cta-btn">Book a call →</a>
-  <p class="cta-note">Or write directly: <a href="/cdn-cgi/l/email-protection#ddb5b8b1b1b29db6bcb4aeb8aff0bea5f3beb2b0"><span class="__cf_email__" data-cfemail="a3cbc6cfcfcce3c8c2cad0c6d18ec0db8dc0ccce">[email&#160;protected]</span></a></p>
+  <a href="DEIN-CALENDLY-LINK" class="cta-btn">
+    Book a call
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M3 8h10M9 4l4 4-4 4"/>
+    </svg>
+  </a>
+  <p class="cta-note">Or write directly: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d3bbb2bfbfbc93b8b2baa0b6a1feb0abfdb7b6">[email&#160;protected]</a></p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <span class="f
+  <span class="footer-logo"><span>CONTR
