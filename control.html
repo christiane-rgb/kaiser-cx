@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CONTROL by Kaiser CX</title>
+<title>CONTROL · CS Operating System by Kaiser CX</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -59,12 +59,12 @@ nav {
   transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--teal); }
+.nav-links a:hover, .nav-links a.active { color: var(--teal); }
 
 /* HERO */
 .hero {
   background: linear-gradient(to right, #0f3d5c 0%, #1e6a9a 50%, #3a8fc0 100%);
-  padding: 80px 6% 100px;
+  padding: 90px 6% 100px;
   position: relative;
   overflow: hidden;
 }
@@ -81,10 +81,6 @@ nav {
 .hero-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 80px;
-  align-items: center;
   position: relative;
   z-index: 1;
 }
@@ -98,7 +94,7 @@ nav {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero-eyebrow::before {
@@ -110,32 +106,24 @@ nav {
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 3.8vw, 4.2rem);
+  font-size: clamp(2.6rem, 4vw, 3.8rem);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.1;
   color: white;
   letter-spacing: -0.03em;
   margin-bottom: 1.2rem;
+  max-width: 700px;
 }
 
-.hero h1 span {
-  color: var(--teal);
-  display: block;
-}
+.hero h1 span { color: var(--teal); }
 
 .hero-sub {
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.75);
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.65);
   font-weight: 300;
+  max-width: 560px;
+  line-height: 1.7;
   margin-bottom: 2.5rem;
-  line-height: 1.6;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -154,118 +142,13 @@ nav {
 
 .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
 
-.btn-ghost {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.5);
-  text-decoration: none;
-  font-weight: 400;
-  transition: color 0.2s;
-}
-
-.btn-ghost:hover { color: var(--teal); }
-
-.hero-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: rgba(255,255,255,0.2);
-}
-
-.stat-card {
-  background: rgba(255,255,255,0.93);
-  padding: 1.6rem 2rem;
-  display: flex;
-  gap: 1.4rem;
-  align-items: center;
-  border-left: 2px solid transparent;
-  transition: border-color 0.2s;
-}
-
-.stat-card:hover { border-color: #0f3d5c; }
-
-.stat-number {
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: #0f3d5c;
-  line-height: 1;
-  min-width: 80px;
-  flex-shrink: 0;
-  letter-spacing: -0.02em;
-}
-
-.stat-text {
-  font-size: 1rem;
-  color: #1a3a4a;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-/* PROBLEM */
-.problem {
-  background: #e8f4f8;
-  padding: 70px 6%;
-  border-top: 1px solid rgba(15,61,92,0.1);
-  border-bottom: 1px solid rgba(15,61,92,0.1);
-}
-
-.problem-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.problem h2 {
-  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
-  font-weight: 500;
-  line-height: 1.2;
-  color: #0f3d5c;
-  letter-spacing: -0.02em;
-}
-
-.problem h2 em {
-  font-style: normal;
-  color: rgba(15,61,92,0.4);
-}
-
-.problem-list { list-style: none; }
-
-.problem-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  font-size: 0.95rem;
-  color: #2d4a5a;
-  font-weight: 300;
-  line-height: 1.5;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(15,61,92,0.1);
-}
-
-.problem-list li:last-child { border-bottom: none; }
-
-.problem-list li::before {
-  content: '↳';
-  color: var(--teal);
-  flex-shrink: 0;
-}
-
-/* WHAT */
-.what {
+/* HOW IT WORKS */
+.how {
   background: white;
   padding: 90px 6%;
 }
 
-.what-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
+.how-inner { max-width: 1200px; margin: 0 auto; }
 
 .section-label {
   font-size: 0.7rem;
@@ -285,68 +168,64 @@ nav {
   background: var(--teal);
 }
 
-.what h2 {
+.how h2 {
   font-size: clamp(1.8rem, 2.5vw, 2.4rem);
   font-weight: 500;
-  line-height: 1.15;
   letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.5rem;
   color: var(--ink);
 }
 
-.what p {
+.how-intro {
   font-size: 0.95rem;
-  color: var(--ink-mid);
+  color: var(--ink-light);
   font-weight: 300;
-  line-height: 1.75;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  max-width: 560px;
 }
 
-.what-points {
-  display: flex;
-  flex-direction: column;
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: var(--border-light);
 }
 
-.what-point {
+.how-step {
   background: var(--light-bg);
-  padding: 1.4rem 1.6rem;
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  border-left: 2px solid transparent;
-  transition: border-color 0.2s;
+  padding: 2rem;
 }
 
-.what-point:hover { border-color: var(--teal); }
-
-.what-point-icon {
-  width: 34px; height: 34px;
-  background: var(--teal-dim);
-  border-radius: 4px;
+.how-step-num {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  margin-bottom: 1.2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--teal);
+  gap: 0.5rem;
 }
 
-.what-point-icon svg { width: 16px; height: 16px; }
+.how-step-num::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--teal-dim);
+}
 
-.what-point-text strong {
-  display: block;
-  font-size: 0.95rem;
+.how-step h4 {
+  font-size: 1rem;
   font-weight: 500;
   color: var(--ink);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.6rem;
 }
 
-.what-point-text span {
-  font-size: 0.85rem;
+.how-step p {
+  font-size: 0.86rem;
   color: var(--ink-mid);
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
 /* PILOTS */
@@ -391,7 +270,7 @@ nav {
 
 .pilot-card {
   background: white;
-  padding: 2rem 2rem 2.5rem;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.2s;
@@ -431,58 +310,58 @@ nav {
 }
 
 .pilot-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--ink);
   letter-spacing: -0.02em;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
 }
 
 .pilot-card > p {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--ink-mid);
   font-weight: 300;
   line-height: 1.7;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 
 .pilot-delivers {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
   margin-bottom: 2rem;
   flex: 1;
 }
 
 .pilot-delivers li {
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   color: var(--ink-mid);
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .pilot-delivers li::before {
   content: '✓';
   color: var(--teal);
-  font-weight: 500;
+  font-weight: 600;
   flex-shrink: 0;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
 }
 
 .pilot-card-wide .pilot-delivers {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem 3rem;
+  gap: 0.6rem 3rem;
 }
 
 .pilot-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1.2rem;
+  padding-top: 1.4rem;
   border-top: 1px solid var(--border-light);
   margin-top: auto;
 }
@@ -498,188 +377,65 @@ nav {
   gap: 0.4rem;
   color: var(--teal);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 500;
   transition: gap 0.2s;
 }
 
 .pilot-cta:hover { gap: 0.7rem; }
 
-/* HOW */
-.how {
+/* FAQ */
+.faq {
   background: white;
   padding: 90px 6%;
 }
 
-.how-inner { max-width: 1200px; margin: 0 auto; }
-
-.how h2 {
-  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
-  color: var(--ink);
-}
-
-.how-intro {
-  font-size: 0.95rem;
-  color: var(--ink-light);
-  font-weight: 300;
-  margin-bottom: 3rem;
-}
-
-.how-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border-light);
-}
-
-.how-step {
-  background: var(--light-bg);
-  padding: 2rem;
-}
-
-.how-step-num {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--teal);
-  margin-bottom: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.how-step-num::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--teal-dim);
-}
-
-.how-step h4 {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 0.6rem;
-}
-
-.how-step p {
-  font-size: 0.88rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  line-height: 1.65;
-}
-
-/* ABOUT */
-.about {
-  background: var(--light-bg);
-  padding: 90px 6%;
-}
-
-.about-inner {
+.faq-inner {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   gap: 80px;
   align-items: start;
 }
 
-.about h2 {
+.faq h2 {
   font-size: clamp(1.8rem, 2.5vw, 2.4rem);
   font-weight: 500;
   letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
   color: var(--ink);
-  line-height: 1.2;
+  position: sticky;
+  top: 80px;
 }
 
-.about p {
-  font-size: 0.95rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  line-height: 1.75;
-  margin-bottom: 1rem;
-}
-
-.about-clients {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-light);
-}
-
-.about-clients-label {
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-light);
-  margin-bottom: 0.8rem;
-  font-weight: 500;
-}
-
-.client-names {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.client-name {
-  font-size: 0.8rem;
-  color: var(--ink-mid);
-  padding: 0.3rem 0.7rem;
-  background: white;
-  border: 1px solid var(--border-light);
-  font-weight: 500;
-  border-radius: 2px;
-}
-
-.credentials {
+.faq-list {
   display: flex;
   flex-direction: column;
   gap: 1px;
   background: var(--border-light);
 }
 
-.credential {
-  background: white;
-  padding: 1.3rem 1.5rem;
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
+.faq-item {
+  background: var(--light-bg);
+  padding: 1.8rem 2rem;
   border-left: 2px solid transparent;
   transition: border-color 0.2s;
 }
 
-.credential:hover { border-color: var(--teal); }
+.faq-item:hover { border-color: var(--teal); }
 
-.credential-icon {
-  width: 32px; height: 32px;
-  background: var(--teal-dim);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--teal);
-}
-
-.credential-icon svg { width: 15px; height: 15px; }
-
-.credential-text strong {
-  display: block;
-  font-size: 0.92rem;
+.faq-item h4 {
+  font-size: 1rem;
   font-weight: 500;
   color: var(--ink);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.6rem;
 }
 
-.credential-text span {
-  font-size: 0.83rem;
+.faq-item p {
+  font-size: 0.88rem;
   color: var(--ink-mid);
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.7;
 }
 
 /* CTA */
@@ -770,13 +526,13 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 780px) {
-  .hero-inner, .problem-inner, .what-inner,
-  .pilots-grid, .how-steps, .about-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .hero-stats { display: none; }
-  .pilots-sub { text-align: left; }
+  .how-steps { grid-template-columns: 1fr 1fr; }
+  .pilots-grid { grid-template-columns: 1fr; }
+  .pilot-card-wide { grid-column: 1; }
   .pilot-card-wide .pilot-delivers { grid-template-columns: 1fr; }
-  nav { padding: 0 4%; }
-  .nav-links { gap: 1rem; }
+  .faq-inner { grid-template-columns: 1fr; }
+  .faq h2 { position: static; }
+  .pilots-sub { text-align: left; }
 }
 </style>
 </head>
@@ -795,261 +551,158 @@ footer {
       <line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
       <line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
     </svg>
-    <span style="font-size:0.38rem; font-weight:200; letter-spacing:0.2em; color:rgba(255,255,255,0.35); margin-left:0.35rem; text-transform:uppercase; align-self:flex-end; padding-bottom:3px; line-height:1;">KAISER CX</span>
+    <span style="font-size:0.48rem; font-weight:200; letter-spacing:0.2em; color:rgba(255,255,255,0.35); margin-left:0.35rem; text-transform:uppercase; align-self:flex-end; padding-bottom:3px; line-height:1;">KAISER CX</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="control.html">CONTROL</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="control.html" class="active">CONTROL</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="#kontakt">Contact</a></li>
+    <li><a href="index.html#kontakt">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow">CONTROL · CS Operating System</div>
-      <h1>We turn your CS team<br>into your fastest<br><span>growth lever.</span></h1>
-      <p class="hero-sub">In 6 weeks. No new headcount. No new platform.</p>
-      <div class="hero-actions">
-        <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="btn-primary">Start a pilot →</a>
-        <a href="#piloten" class="btn-ghost">See the pilots →</a>
-      </div>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-card">
-        <div class="stat-number">6</div>
-        <div class="stat-text">Weeks to your first measurable result.</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">0</div>
-        <div class="stat-text">New tools required. Built into what you already have.</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">NRR↑</div>
-        <div class="stat-text">Every pilot is designed to move this number.</div>
-      </div>
-    </div>
+    <div class="hero-eyebrow">CONTROL · CS Operating System</div>
+    <h1>Built to move <span>NRR.</span></h1>
+    <p class="hero-sub">Three scoped pilots. Eight weeks. No new tools. Each pilot delivers a working system — not a deck, not a recommendation, not a roadmap.</p>
+    <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="btn-primary">Start a pilot →</a>
   </div>
 </section>
 
-<!-- PROBLEM -->
-<div class="problem">
-  <div class="problem-inner">
-    <h2>Your CS team is working hard.<br><em>Just not always on the right accounts.</em></h2>
-    <ul class="problem-list">
-      <li>Churn hits without warning. Every time.</li>
-      <li>Upsell opportunities stay hidden until it's too late.</li>
-      <li>Low-touch accounts fall through the cracks because there's no bandwidth.</li>
-      <li>CSMs are reacting — not steering.</li>
-    </ul>
-  </div>
-</div>
-
-<!-- WHAT -->
-<section class="what">
-  <div class="what-inner">
-    <div>
-      <div class="section-label">What is CONTROL</div>
-      <h2>Not another platform.<br>A system built into yours.</h2>
-      <p>CONTROL is a CS operating system that turns scattered signals into automated, prioritized actions — inside the CRM your team already uses every day.</p>
-      <p>No migration. No onboarding. No new tool to maintain. Just logic, automation, and clarity.</p>
-    </div>
-    <div class="what-points">
-      <div class="what-point">
-        <div class="what-point-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg>
-        </div>
-        <div class="what-point-text">
-          <strong>Right account, right time</strong>
-          <span>Automated prioritization based on signals — not gut feel</span>
-        </div>
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="how-inner">
+    <div class="section-label">How CONTROL works</div>
+    <h2>Signal → Logic → Action → Measure.</h2>
+    <p class="how-intro">Most CS teams have data. What they're missing is the system that turns it into action automatically.</p>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-num">01 — SIGNAL</div>
+        <h4>Connect your signals</h4>
+        <p>We map what you already have — CRM data, product usage, support tickets, NPS. No new data sources required.</p>
       </div>
-      <div class="what-point">
-        <div class="what-point-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M10 4l4 4-4 4"/></svg>
-        </div>
-        <div class="what-point-text">
-          <strong>Action, not just insight</strong>
-          <span>Pre-drafted emails, playbook routing, meeting prep — ready before the CSM opens the account</span>
-        </div>
+      <div class="how-step">
+        <div class="how-step-num">02 — LOGIC</div>
+        <h4>Build the scoring</h4>
+        <p>Retention risk, expansion readiness, onboarding health — logic that fits your segments and your reality.</p>
       </div>
-      <div class="what-point">
-        <div class="what-point-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="1" width="14" height="14" rx="1"/><path d="M5 8l3 3 4-5"/></svg>
-        </div>
-        <div class="what-point-text">
-          <strong>Zero new tools</strong>
-          <span>Runs inside the systems you already pay for. No migration, no training, no friction</span>
-        </div>
+      <div class="how-step">
+        <div class="how-step-num">03 — ACTION</div>
+        <h4>Automate the output</h4>
+        <p>Pre-drafted emails, task routing, meeting briefs — ready before your CSM opens the account.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">04 — MEASURE</div>
+        <h4>Track what moves</h4>
+        <p>NRR, time-to-action, coverage rate. Clear metrics from week one after go-live.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PILOTS -->
-<section class="pilots" id="piloten">
+<section class="pilots">
   <div class="pilots-inner">
     <div class="pilots-header">
       <div>
-        <div class="section-label">CONTROL Pilots</div>
-        <h2>Three pilots. Clear scope.<br>Measurable outcome.</h2>
+        <div class="section-label">The three pilots</div>
+        <h2>Clear scope. Fixed timeline.<br>Measurable outcome.</h2>
       </div>
-      <p class="pilots-sub">Not a year-long engagement. You know exactly what you get — and when.</p>
+      <p class="pilots-sub">Pricing on request · Fixed project fee · No surprises</p>
     </div>
     <div class="pilots-grid">
+
       <div class="pilot-card">
         <div class="pilot-top">
           <div class="pilot-tag">Pilot 01</div>
           <span class="pilot-number">4–6 WKS</span>
         </div>
         <h3>Onboarding Tracker</h3>
-        <p>Structured onboarding built into your CRM. Every new customer gets a personalized path, guided milestones, and automated alerts when they fall behind.</p>
+        <p>Structured onboarding built into your CRM. Every new customer gets a personalized path, guided milestones, and automated alerts when they fall behind — without manual CSM oversight.</p>
         <ul class="pilot-delivers">
           <li>Personalized onboarding journeys per customer segment</li>
-          <li>Guided setup with milestone logic and progress tracking</li>
+          <li>Milestone logic and progress tracking in your CRM</li>
           <li>Automated task alerts and CSM notifications</li>
-          <li>Progress board visible to team and leadership</li>
+          <li>Progress dashboard visible to team and leadership</li>
         </ul>
         <div class="pilot-footer">
           <span class="pilot-timeframe">Remote · 4–6 weeks</span>
           <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="pilot-cta">Book a call →</a>
         </div>
       </div>
+
       <div class="pilot-card">
         <div class="pilot-top">
           <div class="pilot-tag">Pilot 02</div>
           <span class="pilot-number">4–6 WKS</span>
         </div>
         <h3>Customer Intelligence Brief</h3>
-        <p>Before every customer meeting, your CSM has a fully prepared briefing — automatically generated. Key stats, live SWOT, updated success plan. No manual prep.</p>
+        <p>Before every customer meeting, your CSM has a fully prepared briefing — automatically generated. Key stats, live health signals, updated success plan. No manual prep, no tab-switching.</p>
         <ul class="pilot-delivers">
           <li>Auto-generated pre-meeting brief per account</li>
-          <li>Key stats: health score, usage, open risks, recent activity</li>
-          <li>Automated SWOT based on live account signals</li>
-          <li>Success plan pulled and updated before every call</li>
+          <li>Health score, usage data, open risks, recent activity</li>
+          <li>Signal-based SWOT updated before every call</li>
+          <li>Success plan pulled and refreshed automatically</li>
         </ul>
         <div class="pilot-footer">
           <span class="pilot-timeframe">Remote · 4–6 weeks</span>
           <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="pilot-cta">Book a call →</a>
         </div>
       </div>
+
       <div class="pilot-card pilot-card-wide">
         <div class="pilot-top">
           <div class="pilot-tag">Pilot 03</div>
           <span class="pilot-number">4–6 WKS</span>
         </div>
         <h3>Retention & Expansion Signal-to-Action</h3>
-        <p>Your signals are scattered across your stack. This pilot connects them into one clear picture: who is at risk, who is ready to expand — and what to do about it, automatically.</p>
+        <p>Your signals are scattered across your stack. This pilot connects them — and turns them into prioritized, automated action. Your CSMs know exactly who to contact, when, and what to say.</p>
         <ul class="pilot-delivers">
-          <li>Mapping of your existing signal sources across the stack</li>
+          <li>Mapping of existing signal sources across your tool stack</li>
           <li>Scoring logic for retention risk and expansion readiness</li>
-          <li>Automated prioritization so CSMs know exactly where to act</li>
-          <li>Pre-drafted outreach per segment — ready before the CSM picks up the phone</li>
+          <li>Automated account prioritization — updated in real time</li>
+          <li>Pre-drafted outreach per segment, ready before the call</li>
         </ul>
         <div class="pilot-footer">
           <span class="pilot-timeframe">Remote · 4–6 weeks</span>
           <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="pilot-cta">Book a call →</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- HOW -->
-<section class="how">
-  <div class="how-inner">
-    <div class="section-label">How it works</div>
-    <h2>Structured from week one.</h2>
-    <p class="how-intro">No discovery theatre. No endless workshops. Straight into the work.</p>
-    <div class="how-steps">
-      <div class="how-step">
-        <div class="how-step-num">01 — ASSESS</div>
-        <h4>We look at what you have</h4>
-        <p>CRM setup, existing signals, team workflows. Fast, focused, straight into the substance.</p>
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-inner">
+    <h2>Common questions.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>Does this work with our CRM?</h4>
+        <p>CONTROL is built to work inside your existing CRM — HubSpot, Salesforce, Planhat, and others. We assess your setup in week one and build accordingly. No migration required.</p>
       </div>
-      <div class="how-step">
-        <div class="how-step-num">02 — BUILD</div>
-        <h4>We set up the logic</h4>
-        <p>Triggers, scoring, automation — built inside your existing system, not a new one.</p>
+      <div class="faq-item">
+        <h4>How much time does this take from our team?</h4>
+        <p>Typically 2–3 hours per week from one internal stakeholder during the pilot. We do the build. Your team reviews, gives feedback, and takes over at handover.</p>
       </div>
-      <div class="how-step">
-        <div class="how-step-num">03 — HAND OVER</div>
-        <h4>Your team takes over</h4>
-        <p>Full documentation, clear action framework. Measurable from week one after go-live.</p>
+      <div class="faq-item">
+        <h4>What happens after the pilot?</h4>
+        <p>You own it. Full documentation, clean handover, your team runs it. If you want to extend or add a second pilot, we can — but there's no dependency on us to keep it running.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-inner">
-    <div>
-      <div class="section-label">Why CONTROL works</div>
-      <h2>CS strategy + technical implementation.<br>Both in-house.</h2>
-      <p>CONTROL is built on deep CS operational experience and technical automation expertise. Not a consulting deck — a system that gets built, tested, and handed over ready to run.</p>
-      <p>The methodology comes from scaling CS organisations through real growth stages. The automation is built by specialists who implement workflow systems every day.</p>
-      <div class="about-clients">
-        <div class="about-clients-label">Built with experience from</div>
-        <div class="client-names">
-          <span class="client-name">Brandwatch</span>
-        </div>
-      </div>
-      <div class="about-clients" style="margin-top:1rem;">
-        <div class="about-clients-label">Implemented at</div>
-        <div class="client-names">
-          <span class="client-name">Qualiwise</span>
-          <span class="client-name">Escriba</span>
-          <span class="client-name">Move XM</span>
-        </div>
-      </div>
-    </div>
-    <div class="credentials">
-      <div class="credential">
-        <div class="credential-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="2" width="14" height="12" rx="1"/><path d="M4 6h8M4 9h5"/></svg>
-        </div>
-        <div class="credential-text">
-          <strong>CS operations, not theory</strong>
-          <span>Built by people who have run CS teams — and know where the system breaks</span>
-        </div>
-      </div>
-      <div class="credential">
-        <div class="credential-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M10 4l4 4-4 4"/></svg>
-        </div>
-        <div class="credential-text">
-          <strong>Automation that actually ships</strong>
-          <span>Technical implementation included — no handoff to your dev team</span>
-        </div>
-      </div>
-      <div class="credential">
-        <div class="credential-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg>
-        </div>
-        <div class="credential-text">
-          <strong>6 weeks, not 8 months</strong>
-          <span>Scoped pilots with clear deliverables — measurable from go-live</span>
-        </div>
-      </div>
-      <div class="credential">
-        <div class="credential-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 1l1.8 5H15l-4.5 3.3 1.7 5.2L8 11.5l-4.2 3 1.7-5.2L1 6h5.2z"/></svg>
-        </div>
-        <div class="credential-text">
-          <strong>Built for your existing stack</strong>
-          <span>No migration, no new tools, no extra training — runs inside what you already use</span>
-        </div>
+      <div class="faq-item">
+        <h4>We only have a small CS team. Is this still relevant?</h4>
+        <p>Especially then. A small team can't monitor every account manually. CONTROL makes sure the right accounts surface automatically — so your CSMs spend time where it matters.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section" id="kontakt">
-  <h2>Ready to turn CS into a <span>growth lever?</span></h2>
+<section class="cta-section">
+  <h2>Ready to move <span>NRR?</span></h2>
   <p>30 minutes. No sales pitch. I'll look at your setup and tell you honestly whether a pilot makes sense.</p>
-  <a href="https://calendly.com/christiane-kaiser-cx/30min" class="cta-btn">Book a call →</a>
-  <p class="cta-note">Or write directly: <a href="/cdn-cgi/l/email-protection#0162697368727568606f64416a60687264732c62792f626e6c"><span class="__cf_email__" data-cfemail
+  <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="cta-btn">Book a call →</a>
+  <p class="cta-note">Or write directly: <a href="/cdn-cgi/l/email-protection#35565d475c46415c545b50755e545c46504718564d1b565a58"><span class="__cf_email__" data-cfemail
