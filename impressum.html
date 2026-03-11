@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum · Kaiser CX</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root {
+  --blue-dark: #0f3d5c;
+  --blue-mid: #1e6a9a;
+  --teal: #5ecfdc;
+  --light-bg: #f8f9fb;
+  --ink: #0f1923;
+  --ink-mid: #4b5563;
+  --border-light: rgba(15,25,35,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Sora', sans-serif; color: var(--ink); font-size: 16px; line-height: 1.6; background: var(--light-bg); }
+
+/* NAV */
+nav {
+  background: #0f3d5c;
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--teal); }
+
+/* CONTENT */
+.impressum-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 6% 120px;
+}
+
+.impressum-wrap h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.impressum-wrap .subtitle {
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.impressum-wrap h2 {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-top: 2.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.impressum-wrap p {
+  font-size: 0.95rem;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+}
+
+.impressum-wrap a {
+  color: var(--blue-mid);
+  text-decoration: none;
+}
+
+.impressum-wrap a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: 2.5rem 0;
+}
+
+/* FOOTER */
+footer {
+  background: #071f30;
+  color: rgba(255,255,255,0.3);
+  padding: 1.8rem 6%;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+footer a:hover { color: rgba(255,255,255,0.6); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg height="32" viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="18" y1="15" x2="18" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="18" y1="70" x2="48" y2="15" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="18" y1="70" x2="48" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="94" y1="15" x2="70" y2="32" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="70" y1="32" x2="70" y2="108" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="70" y1="108" x2="94" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <span style="font-size:0.48rem; font-weight:200; letter-spacing:0.2em; color:rgba(255,255,255,0.35); margin-left:0.35rem; text-transform:uppercase; align-self:flex-end; padding-bottom:3px; line-height:1;">KAISER CX</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="control.html">Control</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="impressum-wrap">
+
+  <h1>Impressum</h1>
+  <p class="subtitle">Angaben gemäß § 5 TMG</p>
+
+  <h2>Verantwortlich</h2>
+  <p>Christiane Kaiser CX Consulting</p>
+
+  <h2>Adresse</h2>
+  <p>Müggelseedamm 228</p>
+  <p>12587 Berlin</p>
+  <p>Deutschland</p>
+
+  <h2>Kontakt</h2>
+  <p>E-Mail: <a href="mailto:christiane@kaiser-cx.com">christiane@kaiser-cx.com</a></p>
+  <p>Website: <a href="https://kaiser-cx.com">kaiser-cx.com</a></p>
+
+  <hr class="divider">
+
+  <h2>Berufsbezeichnung & Berufsrecht</h2>
+  <p>Berufsbezeichnung: Unternehmensberaterin</p>
+  <p>Verliehen in: Deutschland</p>
+
+  <hr class="divider">
+
+  <h2>EU-Streitschlichtung</h2>
+  <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+  <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a></p>
+  <p>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+
+  <h2>Verbraucherstreitbeilegung</h2>
+  <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+  Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+  <hr class="divider">
+
+  <h2>Haftung für Inhalte</h2>
+  <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+
+  <h2>Haftung für Links</h2>
+  <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+  <h2>Urheberrecht</h2>
+  <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+
+</div>
+
+<footer>
+  <span>© 2025 Kaiser CX Consulting</span>
+  <span>
+    <a href="impressum.html">Impressum</a> ·
+    <a href="datenschutz.html">Datenschutz</a>
+  </span>
+  <span>kaiser-cx.com</span>
+</footer>
+
+</body>
+</html>
