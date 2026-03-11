@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advisory · Kaiser CX</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root {
+  --blue-dark: #0f3d5c;
+  --blue-mid: #1e6a9a;
+  --blue-light: #3a8fc0;
+  --teal: #5ecfdc;
+  --teal-dim: rgba(94,207,220,0.10);
+  --white: #ffffff;
+  --light-bg: #f8f9fb;
+  --ink: #0f1923;
+  --ink-mid: #4b5563;
+  --ink-light: #9ca3af;
+  --border-light: rgba(15,25,35,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Sora', sans-serif; color: var(--ink); font-size: 16px; line-height: 1.6; background: var(--light-bg); }
+
+/* NAV */
+nav {
+  background: #0f3d5c;
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active { color: var(--teal); }
+
+/* HERO */
+.hero {
+  background: linear-gradient(to right, #0f3d5c 0%, #1e6a9a 50%, #3a8fc0 100%);
+  padding: 90px 6% 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -150px; right: -100px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(94,207,220,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 2rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 7px; height: 7px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 3.8vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: white;
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 span { color: var(--teal); }
+
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  max-width: 560px;
+  line-height: 1.75;
+}
+
+/* SECTION LABEL */
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 20px; height: 2px;
+  background: var(--teal);
+}
+
+/* WHAT THIS IS */
+.what {
+  background: white;
+  padding: 90px 6%;
+}
+
+.what-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.what h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.what p {
+  font-size: 0.95rem;
+  color: var(--ink-mid);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.what p strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.differentiators {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border-light);
+}
+
+.diff-item {
+  background: var(--light-bg);
+  padding: 1.4rem 1.6rem;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.diff-item:hover { border-color: var(--teal); }
+
+.diff-item h3 {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.diff-item p {
+  font-size: 0.86rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* FORMATS */
+.formats {
+  background: var(--light-bg);
+  padding: 90px 6%;
+}
+
+.formats-inner { max-width: 1200px; margin: 0 auto; }
+
+.formats h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.formats-intro {
+  font-size: 0.95rem;
+  color: var(--ink-mid);
+  max-width: 560px;
+  margin-bottom: 3.5rem;
+  line-height: 1.75;
+}
+
+.format-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border-light);
+  margin-bottom: 1px;
+}
+
+.format-card {
+  background: white;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.format-card:hover { border-color: var(--teal); }
+
+.format-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.format-card h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.format-card p {
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  flex: 1;
+}
+
+.format-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.format-detail {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.format-detail::before {
+  content: '—';
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+/* WORKSHOPS */
+.workshops {
+  background: white;
+  padding: 90px 6%;
+}
+
+.workshops-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.workshops h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.workshops-intro {
+  font-size: 0.95rem;
+  color: var(--ink-mid);
+  max-width: 560px;
+  margin-bottom: 3.5rem;
+  line-height: 1.75;
+}
+
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+}
+
+.workshop-card {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.workshop-card:hover { border-color: var(--teal); }
+
+.workshop-num {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.workshop-num::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--teal-dim);
+}
+
+.workshop-card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.workshop-card p {
+  font-size: 0.86rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.workshop-meta {
+  font-size: 0.78rem;
+  color: var(--ink-light);
+  font-weight: 400;
+}
+
+/* FIT */
+.fit {
+  background: var(--light-bg);
+  padding: 90px 6%;
+}
+
+.fit-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.fit h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.fit-intro {
+  font-size: 0.95rem;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.fit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.fit-item {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  line-height: 1.6;
+}
+
+.fit-item::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  flex-shrink: 0;
+  margin-top: 0.55rem;
+}
+
+.fit-quote {
+  background: var(--teal-dim);
+  border-left: 3px solid var(--teal);
+  padding: 2rem 2.2rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.fit-quote p {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--blue-dark);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.fit-quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-style: normal;
+  color: var(--ink-light);
+}
+
+/* CTA */
+.cta-section {
+  background: linear-gradient(to right, #0f3d5c 0%, #1e6a9a 50%, #3a8fc0 100%);
+  padding: 100px 6%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(94,207,220,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-section h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  position: relative;
+}
+
+.cta-section h2 span { color: var(--teal); }
+
+.cta-section p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+  max-width: 420px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  position: relative;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--teal);
+  color: #0f3d5c;
+  text-decoration: none;
+  padding: 1rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 2px;
+  transition: opacity 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+.cta-note {
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.25);
+  position: relative;
+}
+
+.cta-note a { color: rgba(255,255,255,0.4); }
+
+/* FOOTER */
+footer {
+  background: #071f30;
+  color: rgba(255,255,255,0.3);
+  padding: 1.8rem 6%;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+footer a:hover { color: rgba(255,255,255,0.6); }
+
+/* RESPONSIVE */
+@media (max-width: 780px) {
+  .what-inner, .fit-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .format-grid, .workshop-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg height="32" viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="18" y1="15" x2="18" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="18" y1="70" x2="48" y2="15" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="18" y1="70" x2="48" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="94" y1="15" x2="70" y2="32" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="70" y1="32" x2="70" y2="108" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="70" y1="108" x2="94" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <span style="font-size:0.48rem; font-weight:200; letter-spacing:0.2em; color:rgba(255,255,255,0.35); margin-left:0.35rem; text-transform:uppercase; align-self:flex-end; padding-bottom:3px; line-height:1;">KAISER CX</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="control.html">CONTROL</a></li>
+    <li><a href="advisory.html" class="active">Advisory</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#kontakt">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Advisory · Kaiser CX</div>
+    <h1>A thinking partner who's<br>been in the <span>operational reality.</span></h1>
+    <p class="hero-sub">For CS leaders who don't need more frameworks — they need a sparring partner who understands what it's like when the team is under capacity, the data is incomplete, and leadership still expects results.</p>
+  </div>
+</section>
+
+<!-- WHAT THIS IS -->
+<section class="what">
+  <div class="what-inner">
+    <div>
+      <div class="section-label">What advisory means here</div>
+      <h2>Not advice from the outside.<br>Thinking from the inside.</h2>
+      <p>Advisory with me isn't a status report call once a month. It's working through the actual problems — the ones that don't fit neatly into a playbook, where the answer depends on context you can't summarise in a slide.</p>
+      <p><strong>The value isn't the framework.</strong> It's having someone who has run CS teams through hypergrowth, restructuring, and the gap between strategy and Monday morning — and who can think alongside you when it matters.</p>
+      <p>CONTROL handles the systematic side. Advisory handles everything that requires judgment.</p>
+    </div>
+    <div class="differentiators">
+      <div class="diff-item">
+        <h3>Operational depth, not best practices</h3>
+        <p>I work from what actually happens in CS organisations — not what should happen according to a methodology.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Direct and honest</h3>
+        <p>No hedged answers. If the approach isn't working, I'll say so — and tell you what I'd try instead.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Strategic and specific at once</h3>
+        <p>I can zoom out to the org level and zoom in to a specific account conversation in the same session.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Complementary to CONTROL</h3>
+        <p>Advisory fills what automation can't — the judgment calls, the people dynamics, the decisions that don't have a trigger.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATS -->
+<section class="formats">
+  <div class="formats-inner">
+    <div class="section-label">How we work together</div>
+    <h2>Two formats. One point of contact.</h2>
+    <p class="formats-intro">Whether you need ongoing access or a focused session — both are available. Scope is always discussed before we start.</p>
+    <div class="format-grid">
+      <div class="format-card">
+        <span class="format-tag">Ongoing</span>
+        <h3>Monthly Retainer</h3>
+        <p>Regular access for CS leaders who want a consistent thinking partner. We meet monthly, with async availability in between for the things that can't wait. Useful for leaders navigating ongoing change — restructuring, scaling, or building the case for CS investment internally.</p>
+        <div class="format-details">
+          <span class="format-detail">2 sessions per month (60 min each)</span>
+          <span class="format-detail">Async availability between sessions</span>
+          <span class="format-detail">Minimum 3 months · Pricing on request</span>
+        </div>
+      </div>
+      <div class="format-card">
+        <span class="format-tag">Focused</span>
+        <h3>Single Advisory Session</h3>
+        <p>A 90-minute session structured around a specific question or challenge. You come with the problem. We work through it together — diagnosis, options, next steps. No prep required beyond knowing what you want to think through.</p>
+        <div class="format-details">
+          <span class="format-detail">90 minutes via video call</span>
+          <span class="format-detail">Written summary sent after the session</span>
+          <span class="format-detail">Bookable as a one-off · Pricing on request</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOPS -->
+<section class="workshops">
+  <div class="workshops-inner">
+    <div class="section-label">Team enablement</div>
+    <h2>Workshops for CS teams.</h2>
+    <p class="workshops-intro">Half-day or full-day sessions — online or on-site — built around what your team is actually dealing with, not a standard curriculum.</p>
+    <div class="workshop-grid">
+      <div class="workshop-card">
+        <div class="workshop-num">01</div>
+        <h3>From Reactive to Structured</h3>
+        <p>For CS teams that are always putting out fires. We rebuild the logic of how accounts get prioritised — and what a structured week actually looks like.</p>
+        <div class="workshop-meta">Half day · Online or on-site</div>
+      </div>
+      <div class="workshop-card">
+        <div class="workshop-num">02</div>
+        <h3>Retention & Expansion Signals</h3>
+        <p>How to read what your accounts are telling you — and how to turn that into consistent, repeatable action before churn or opportunity slips past.</p>
+        <div class="workshop-meta">Half day · Online or on-site</div>
+      </div>
+      <div class="workshop-card">
+        <div class="workshop-num">03</div>
+        <h3>CS as a Growth Function</h3>
+        <p>For teams that want to make the internal case for CS investment. How to frame NRR, capacity, and coverage in language that lands with leadership.</p>
+        <div class="workshop-meta">Full day · Online or on-site</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section class="fit">
+  <div class="fit-inner">
+    <div>
+      <div class="section-label">Who this is for</div>
+      <h2>This works best when—</h2>
+      <p class="fit-intro">Advisory is most useful for CS leaders who are already capable and experienced. You're not looking for someone to explain the basics. You need a peer-level thinking partner with operational credibility.</p>
+      <div class="fit-list">
+        <div class="fit-item">You're a VP, Head of CS, or CS Team Lead navigating a period of change — growth, restructuring, or building the function from scratch.</div>
+        <div class="fit-item">You're dealing with a problem that's strategic on the surface but operational underneath — and you need someone who can work at both levels.</div>
+        <div class="fit-item">Your team needs a focused intervention — not a full consulting engagement, but more than a talk.</div>
+        <div class="fit-item">You want honest pushback, not validation of decisions you've already made.</div>
+        <div class="fit-item">You work in B2B SaaS and have an account base that's growing faster than your team's capacity to cover it.</div>
+      </div>
+    </div>
+    <div class="fit-quote">
+      <p>"The best CS leaders I've worked with don't need someone to tell them what to do. They need someone to think alongside them — and to say clearly when the direction isn't working."</p>
+      <cite>— Christiane Kaiser</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Let's talk about <span>what you're dealing with.</span></h2>
+  <p>30 minutes. No pitch. I'll tell you honestly whether advisory makes sense — or whether something else would serve you better.</p>
+  <a href="https://calendly.com/christiane-kaiser-cx/30min" target="_blank" class="cta-btn">Book a call →</a>
+  <p class="cta-note">Or write directly: <a href="mailto:christiane@kaiser-cx.com">christiane@kaiser-cx.com</a></p>
+</section>
+
+<footer>
+  <span>© 2025 Kaiser CX Consulting</span>
+  <span>
+    <a href="impressum.html">Legal Notice</a> ·
+    <a href="datenschutz.html">Privacy Policy</a>
+  </span>
+  <span>kaiser-cx.com</span>
+</footer>
+
+</body>
+</html>
