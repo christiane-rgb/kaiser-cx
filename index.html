@@ -623,6 +623,23 @@ nav {
   font-weight: 500;
 }
 
+.client-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.client-logos img {
+  height: 28px;
+  width: auto;
+  opacity: 0.45;
+  filter: grayscale(100%);
+  transition: opacity 0.2s;
+}
+
+.client-logos img:hover { opacity: 0.7; }
+
 .client-names {
   display: flex;
   flex-wrap: wrap;
@@ -999,6 +1016,15 @@ footer {
       <p>CONTROL is built on deep CS operational experience and technical automation expertise. Not a consulting deck — a system that gets built, tested, and handed over ready to run.</p>
       <p>The methodology comes from scaling CS organisations through real growth stages. The automation is built by specialists who implement workflow systems every day.</p>
 
+    </div>
+    <div class="about-clients">
+      <div class="about-clients-label">Experience from</div>
+      <div class="client-logos">
+        <img src="logo_brandwatch.png" alt="Brandwatch">
+        <img src="logo_qualiwise.png" alt="Qualiwise">
+        <img src="logo_railflow.png" alt="Rail-Flow">
+        <img src="logo_escriba.png" alt="Escriba">
+      </div>
     </div>
     <div class="credentials">
       <div class="credential">
