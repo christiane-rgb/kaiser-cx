@@ -536,6 +536,13 @@ function handleDownload() {
     return;
   }
 
+  // Submit to Formspree
+  fetch('https://formspree.io/f/xpqolplw', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, email: email })
+  });
+
   // Show thank you state
   document.getElementById('form-fields').style.display = 'none';
   document.getElementById('thank-you').style.display = 'block';
