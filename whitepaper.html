@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Timing Gap · Kaiser CX</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root {
+  --blue-dark: #0f3d5c;
+  --blue-mid: #1e6a9a;
+  --blue-light: #3a8fc0;
+  --teal: #5ecfdc;
+  --teal-dim: rgba(94,207,220,0.12);
+  --light-bg: #f8f9fb;
+  --ink: #0f1923;
+  --ink-mid: #4b5563;
+  --ink-light: #9ca3af;
+  --border-light: rgba(15,25,35,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Sora', sans-serif; color: var(--ink); font-size: 16px; line-height: 1.6; background: var(--light-bg); }
+
+/* NAV */
+nav {
+  background: #0f3d5c;
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--teal); }
+
+/* HERO */
+.hero {
+  background: linear-gradient(to right, #0f3d5c 0%, #1e6a9a 50%, #3a8fc0 100%);
+  padding: 90px 6% 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -150px; right: -100px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(94,207,220,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 2rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 7px; height: 7px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 3.5vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: white;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span { color: var(--teal); }
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+/* FORM CARD */
+.form-card {
+  background: white;
+  padding: 2.4rem;
+  border-radius: 2px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+
+.form-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+  margin-bottom: 0.4rem;
+}
+
+.form-card p {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  font-weight: 300;
+  margin-bottom: 1.6rem;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-mid);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 2px;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--light-bg);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: var(--teal);
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--teal);
+  color: #0f3d5c;
+  border: none;
+  padding: 0.9rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-top: 0.5rem;
+}
+
+.form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.form-note {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+  text-align: center;
+  margin-top: 0.8rem;
+  font-weight: 300;
+}
+
+/* WHAT'S INSIDE */
+.inside {
+  background: white;
+  padding: 90px 6%;
+}
+
+.inside-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 20px; height: 2px;
+  background: var(--teal);
+}
+
+.inside h2 {
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 3rem;
+}
+
+.inside-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+}
+
+.inside-item {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.inside-item:hover { border-color: var(--teal); }
+
+.inside-num {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inside-num::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--teal-dim);
+}
+
+.inside-item h3 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.inside-item p {
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+/* AUTHORS */
+.authors {
+  background: var(--light-bg);
+  padding: 70px 6%;
+  border-top: 1px solid var(--border-light);
+}
+
+.authors-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border-light);
+}
+
+.author {
+  background: white;
+  padding: 2rem 2.2rem;
+}
+
+.author-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.6rem;
+}
+
+.author h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.author p {
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+/* FOOTER */
+footer {
+  background: #071f30;
+  color: rgba(255,255,255,0.3);
+  padding: 1.8rem 6%;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+footer a:hover { color: rgba(255,255,255,0.6); }
+
+/* THANK YOU STATE */
+.thank-you {
+  display: none;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.thank-you h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+  margin-bottom: 0.5rem;
+}
+
+.thank-you p {
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  margin-bottom: 1.2rem;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--teal);
+  color: #0f3d5c;
+  text-decoration: none;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+
+.download-btn:hover { opacity: 0.9; }
+
+@media (max-width: 780px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .inside-grid { grid-template-columns: 1fr; }
+  .authors-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg height="32" viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="18" y1="15" x2="18" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="18" y1="70" x2="48" y2="15" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="18" y1="70" x2="48" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="94" y1="15" x2="70" y2="32" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="70" y1="32" x2="70" y2="108" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="70" y1="108" x2="94" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <span style="font-size:0.48rem; font-weight:200; letter-spacing:0.2em; color:rgba(255,255,255,0.35); margin-left:0.35rem; text-transform:uppercase; align-self:flex-end; padding-bottom:3px; line-height:1;">KAISER CX</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="control.html">CONTROL</a></li>
+    <li><a href="advisory.html">Advisory</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#kontakt">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Free Whitepaper · Kaiser CX × Pollup AI</div>
+      <h1>The <span>Timing Gap.</span></h1>
+      <p class="hero-sub">Why CS teams miss churn and expansion signals they already have — and how Agentic AI closes it. A practical guide for CS leaders managing growing portfolios without growing headcount.</p>
+    </div>
+
+    <div class="form-card" id="form-container">
+      <h3>Download the whitepaper</h3>
+      <p>Free. No spam. One email to get the PDF.</p>
+      <div id="form-fields">
+        <div class="form-group">
+          <label>First name</label>
+          <input type="text" id="firstname" placeholder="Christiane" />
+        </div>
+        <div class="form-group">
+          <label>Work email</label>
+          <input type="email" id="email" placeholder="you@company.com" />
+        </div>
+        <button class="form-submit" onclick="handleDownload()">Get the whitepaper →</button>
+        <p class="form-note">By downloading you agree to our <a href="datenschutz.html" style="color:var(--ink-light);">Privacy Policy</a>.</p>
+      </div>
+      <div class="thank-you" id="thank-you">
+        <h3>Thank you — enjoy the read.</h3>
+        <p>Your download should start automatically.</p>
+        <a href="whitepaper-signal-to-action.pdf" download class="download-btn">↓ Download PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside">
+  <div class="inside-inner">
+    <div class="section-label">What's inside</div>
+    <h2>Six chapters. Practical throughout.</h2>
+    <div class="inside-grid">
+      <div class="inside-item">
+        <div class="inside-num">01</div>
+        <h3>The real problem isn't churn. It's timing.</h3>
+        <p>Why signals always exist before a customer disengages — and why they go unconnected.</p>
+      </div>
+      <div class="inside-item">
+        <div class="inside-num">02</div>
+        <h3>Why traditional automation doesn't solve this.</h3>
+        <p>The integration problem — and why point-to-point automation becomes a maintenance obligation.</p>
+      </div>
+      <div class="inside-item">
+        <div class="inside-num">03</div>
+        <h3>What Agentic AI actually is — in plain language.</h3>
+        <p>No hype. A clear explanation of how context-aware automation differs from rules-based triggers.</p>
+      </div>
+      <div class="inside-item">
+        <div class="inside-num">04</div>
+        <h3>Three concrete CS scenarios.</h3>
+        <p>Churn signal to outreach. Renewal to success plan review. Unmanaged account to expansion opportunity.</p>
+      </div>
+      <div class="inside-item">
+        <div class="inside-num">05</div>
+        <h3>CS platform or agentic automation?</h3>
+        <p>An honest comparison — when a platform makes sense, and when building on your existing stack is better.</p>
+      </div>
+      <div class="inside-item">
+        <div class="inside-num">06</div>
+        <h3>Where to start.</h3>
+        <p>How to identify the right first use case — without a full CS transformation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORS -->
+<section class="authors">
+  <div class="authors-inner">
+    <div class="author">
+      <div class="author-tag">Kaiser CX · CS Strategy</div>
+      <h3>Christiane Kaiser</h3>
+      <p>Founder of Kaiser CX Consulting. 15+ years in Customer Success, including nearly a decade leading international CS teams at Brandwatch. Works with European SaaS companies on scalable CS infrastructure and signal-to-action systems.</p>
+    </div>
+    <div class="author">
+      <div class="author-tag">Pollup AI · Technical Implementation</div>
+      <h3>Caroline Dépierre</h3>
+      <p>CEO and co-founder at Pollup AI. Implements automations and agentic AI for client-facing teams. Building the AI-powered signal-to-action engine that turns B2B SaaS customer data into retention and expansion revenue.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Kaiser CX Consulting</span>
+  <span>
+    <a href="impressum.html">Legal Notice</a> ·
+    <a href="datenschutz.html">Privacy Policy</a>
+  </span>
+  <span>kaiser-cx.com</span>
+</footer>
+
+<script>
+function handleDownload() {
+  const name = document.getElementById('firstname').value.trim();
+  const email = document.getElementById('email').value.trim();
+
+  if (!name || !email) {
+    alert('Please enter your name and email to download.');
+    return;
+  }
+
+  if (!email.includes('@') || !email.includes('.')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Show thank you state
+  document.getElementById('form-fields').style.display = 'none';
+  document.getElementById('thank-you').style.display = 'block';
+
+  // Trigger download
+  const link = document.createElement('a');
+  link.href = 'whitepaper-signal-to-action.pdf';
+  link.download = 'whitepaper-signal-to-action.pdf';
+  link.click();
+}
+</script>
+
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7fdf7abc37ff46c6bea74481a9a47e6e"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
