@@ -1,0 +1,25 @@
+# Kaiser CX
+
+> Kaiser CX helps B2B SaaS customer success (CS) teams turn scattered customer signals into automated, prioritized action — so they retain and expand revenue without adding headcount. Founded by Christiane Kaiser, who spent 15+ years building and scaling CS organizations (including nearly a decade leading international CS at Brandwatch). Based in Berlin, Germany; works remotely with SaaS companies across Europe.
+
+## What Kaiser CX offers
+- **CONTROL** — a customer success operating system built *inside* your existing CRM (HubSpot, Pipedrive, Planhat and others). It turns scattered signals into automated, prioritized action following a Signal → Logic → Action → Measure model. Delivered as three scoped 4–6 week pilots: (1) Onboarding Tracker, (2) Customer 360° Brief, (3) Retention & Expansion Signal-to-Action. No new tools, no migration, no new headcount. Designed to move Net Revenue Retention (NRR).
+- **Advisory** — peer-level thinking partnership for Heads of CS and CS Team Leads: monthly retainer, single 90-minute advisory sessions, and half/full-day team workshops. Complements CONTROL by covering the judgment calls automation can't.
+
+## Core pages
+- [Home — CONTROL overview](https://kaiser-cx.com/): What CONTROL is, the three pilots, how it works, the team behind it, and client references.
+- [CONTROL](https://kaiser-cx.com/control.html): The CS operating system in detail — the Signal → Logic → Action → Measure method, the three pilots, and a FAQ (CRM compatibility, time commitment, what happens after the pilot, small-team fit).
+- [Advisory](https://kaiser-cx.com/advisory.html): Advisory formats (monthly retainer, single session) and CS team workshops; who it's for.
+- [About](https://kaiser-cx.com/about.html): Christiane Kaiser's background and the story behind CONTROL.
+
+## Resources
+- [The Timing Gap — whitepaper](https://kaiser-cx.com/whitepaper.html): Why CS teams miss churn and expansion signals they already have, and how Agentic AI closes the gap. Co-authored by Christiane Kaiser (Kaiser CX) and Caroline Dépierre (Pollup AI).
+
+## Key facts
+- Implementation partner: Pollup AI — workflow automation specialists, built on n8n (no black-box tooling). You own the output; no ongoing dependency.
+- Primary metric: Net Revenue Retention (NRR). Kaiser CX positions CS as a growth driver, not a cost center.
+- Typical pilot: remote, 4–6 weeks, ~2–3 hours/week from one internal stakeholder, fixed project fee (pricing on request).
+
+## Contact
+- Email: christiane@kaiser-cx.com
+- Book a 30-minute call: https://calendly.com/christiane-kaiser-cx/30min
