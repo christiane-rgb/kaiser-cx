@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found · Kaiser CX</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<script>
+  // Redirect old Webador URLs to new GitHub Pages URLs
+  const redirects = {
+    '/how-we-work': '/control.html',
+    '/contact-1': '/index.html#kontakt',
+    '/imprint': '/impressum.html',
+    '/privacy-policy': '/datenschutz.html',
+  };
+
+  const path = window.location.pathname.replace(/\/$/, '');
+  if (redirects[path]) {
+    window.location.replace(redirects[path]);
+  }
+</script>
+<style>
+:root {
+  --blue-dark: #0f3d5c;
+  --teal: #5ecfdc;
+  --light-bg: #f8f9fb;
+  --ink: #0f1923;
+  --ink-mid: #4b5563;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Sora', sans-serif; background: var(--light-bg); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
+
+nav {
+  background: #0f3d5c;
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--teal); }
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 6%;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--blue-dark);
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  max-width: 420px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--teal);
+  color: #0f3d5c;
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+
+.btn:hover { opacity: 0.9; }
+
+footer {
+  background: #071f30;
+  color: rgba(255,255,255,0.3);
+  padding: 1.8rem 6%;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+footer a:hover { color: rgba(255,255,255,0.6); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg height="32" viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="18" y1="15" x2="18" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="18" y1="70" x2="48" y2="15" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="18" y1="70" x2="48" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="94" y1="15" x2="70" y2="32" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="70" y1="32" x2="70" y2="108" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="70" y1="108" x2="94" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <span style="font-size:0.48rem; font-weight:200; letter-spacing:0.2em; color:rgba(255,255,255,0.35); margin-left:0.35rem; text-transform:uppercase; align-self:flex-end; padding-bottom:3px; line-height:1;">KAISER CX</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="control.html">CONTROL</a></li>
+    <li><a href="advisory.html">Advisory</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#kontakt">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="content">
+  <div class="label">404 · Page not found</div>
+  <h1>This page doesn't exist.</h1>
+  <p>The page you're looking for has moved or no longer exists. Head back to the homepage and find what you need from there.</p>
+  <a href="index.html" class="btn">Back to homepage →</a>
+</div>
+
+<footer>
+  <span>© 2025 Kaiser CX Consulting</span>
+  <span>
+    <a href="impressum.html">Legal Notice</a> ·
+    <a href="datenschutz.html">Privacy Policy</a>
+  </span>
+  <span>kaiser-cx.com</span>
+</footer>
+
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7fdf7abc37ff46c6bea74481a9a47e6e"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
