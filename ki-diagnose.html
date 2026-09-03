@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wo lohnt sich AI im Customer Success wirklich? · Kaiser CX</title>
+<title>AI im Customer Success — Selbsttest · Pollup &amp; Kaiser CX</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -37,6 +37,11 @@ nav {
   z-index: 100;
 }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-brand { display: flex; align-items: center; gap: 0.9rem; }
+.nav-logo-label { font-size:0.48rem; font-weight:200; letter-spacing:0.2em; color:rgba(255,255,255,0.35); margin-left:0.35rem; text-transform:uppercase; align-self:flex-end; padding-bottom:3px; line-height:1; }
+.nav-brand-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.15); }
+.nav-partner { font-size:0.48rem; font-weight:200; letter-spacing:0.2em; color:rgba(255,255,255,0.35); text-transform:uppercase; text-decoration:none; transition: color 0.2s; }
+.nav-partner:hover { color: var(--teal); }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
   font-size: 0.78rem;
@@ -128,6 +133,37 @@ nav {
   content: '→';
   font-size: 1.1rem;
 }
+.hero-facts {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.hero-facts .fact-value {
+  color: white;
+  font-size: 1.4rem;
+}
+.hero-facts .fact-label {
+  color: rgba(255,255,255,0.6);
+}
+.fact {
+  display: flex;
+  flex-direction: column;
+}
+.fact-value {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--blue-dark);
+  letter-spacing: -0.02em;
+}
+.fact-label {
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  margin-top: 0.2rem;
+}
 
 /* PROBLEM SECTION */
 .problem {
@@ -176,101 +212,10 @@ nav {
   font-weight: 500;
 }
 
-/* ANALYSE SECTION */
-.analyse {
-  padding: 100px 6%;
-  background: var(--light-bg);
-}
-.analyse-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.analyse-header {
-  margin-bottom: 3.5rem;
-  max-width: 780px;
-}
-.analyse h2 {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 500;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  margin-bottom: 1.4rem;
-}
-.analyse-header p {
-  font-size: 1.05rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  line-height: 1.7;
-}
-.dimensions-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--border-light);
-  margin-bottom: 3rem;
-}
-.dimension {
-  background: white;
-  padding: 2.2rem;
-}
-.dim-num {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--teal);
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.dim-num::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--teal-dim);
-}
-.dimension h3 {
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 0.8rem;
-  letter-spacing: -0.01em;
-}
-.dimension p {
-  font-size: 0.9rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  line-height: 1.65;
-}
-.analyse-facts {
-  display: flex;
-  gap: 3rem;
-  flex-wrap: wrap;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-light);
-}
-.fact {
-  display: flex;
-  flex-direction: column;
-}
-.fact-value {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--blue-dark);
-  letter-spacing: -0.02em;
-}
-.fact-label {
-  font-size: 0.85rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  margin-top: 0.2rem;
-}
-
 /* NEXT STEP */
 .next {
   padding: 100px 6% 90px;
-  background: white;
+  background: var(--light-bg);
 }
 .next-inner {
   max-width: 900px;
@@ -391,6 +336,21 @@ nav {
   color: var(--teal);
   font-weight: 500;
 }
+.about-intro {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 760px;
+  margin-bottom: 0.5rem;
+}
+.about-col-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
 
 /* SECOND CTA */
 .cta-section {
@@ -445,11 +405,10 @@ footer a:hover { color: var(--teal); }
   .nav-links { gap: 1rem; }
   .nav-links a { font-size: 0.7rem; }
   .hero { padding: 60px 6% 70px; }
-  .dimensions-grid { grid-template-columns: 1fr; }
-  .analyse-facts { flex-direction: column; gap: 1.5rem; }
+  .hero-facts { flex-direction: column; gap: 1.5rem; }
   .next-steps { grid-template-columns: 1fr; gap: 2rem; }
   .about-content { grid-template-columns: 1fr; gap: 2rem; }
-  .problem, .analyse, .next, .about, .cta-section { padding: 60px 6%; }
+  .problem, .next, .about, .cta-section { padding: 60px 6%; }
 }
 </style>
 </head>
@@ -457,19 +416,23 @@ footer a:hover { color: var(--teal); }
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">
-    <svg height="32" viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="18" y1="15" x2="18" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-      <line x1="18" y1="70" x2="48" y2="15" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
-      <line x1="18" y1="70" x2="48" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-      <line x1="94" y1="15" x2="70" y2="32" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-      <line x1="70" y1="32" x2="70" y2="108" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
-      <line x1="70" y1="108" x2="94" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-      <line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-      <line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
-    </svg>
-    <span style="font-size:0.48rem; font-weight:200; letter-spacing:0.2em; color:rgba(255,255,255,0.35); margin-left:0.35rem; text-transform:uppercase; align-self:flex-end; padding-bottom:3px; line-height:1;">KAISER CX</span>
-  </a>
+  <div class="nav-brand">
+    <a href="index.html" class="nav-logo">
+      <svg height="32" viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="18" y1="15" x2="18" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="18" y1="70" x2="48" y2="15" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="18" y1="70" x2="48" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="94" y1="15" x2="70" y2="32" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="70" y1="32" x2="70" y2="108" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="70" y1="108" x2="94" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-logo-label">KAISER CX</span>
+    </a>
+    <span class="nav-brand-divider"></span>
+    <a href="https://pollup.ai" target="_blank" rel="noopener" class="nav-partner">Pollup</a>
+  </div>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="control.html">CONTROL</a></li>
@@ -482,56 +445,12 @@ footer a:hover { color: var(--teal); }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">10-Minuten-Analyse</div>
-    <h1>Wo lohnt sich <span>AI</span> im Customer Success wirklich?</h1>
-    <p class="hero-sub">Finde in 10 Minuten heraus, wo bei euch die Lücke sitzt — und wo es sich lohnt, anzufangen. Konkret. Für eure Situation. Ohne Buzzwords.</p>
+    <div class="hero-eyebrow">Selbsttest · 10 Minuten</div>
+    <h1>AI im Customer Success funktioniert.<br><span>Aber nur, wenn sie in eurem System lebt — nicht daneben.</span></h1>
+    <p class="hero-sub">Kein neues Tool. Keine isolierten Experimente. Sondern KI, die in euren bestehenden Prozessen, Daten und Workflows arbeitet. Dieser Test zeigt euch, wie bereit euer System dafür ist.</p>
     <a href="ki-readiness.html" class="cta-primary">Analyse starten</a>
-  </div>
-</section>
 
-<!-- PROBLEM -->
-<section class="problem">
-  <div class="problem-inner">
-    <div class="section-eyebrow">Das Problem</div>
-    <h2>KI und Automatisierung im CS scheitern selten an den Tools.</h2>
-    <p>Meistens scheitert es daran, dass niemand weiß, wo anfangen. Entweder das CS-Team kennt die Kundenlogik, aber nicht die Technik. Oder jemand baut Automationen, ohne wirklich zu verstehen, wie das im daily Business funktioniert.</p>
-    <p>Die Folge: <strong>Fragmentierte Ansätze, die einzeln Sinn machen, aber zusammen keinen Impact haben.</strong> Manuelle Arbeit bleibt, KI-Experimente stehen nebenher, und die Frage "Wo lohnt es sich wirklich?" bleibt unbeantwortet.</p>
-  </div>
-</section>
-
-<!-- ANALYSE -->
-<section class="analyse">
-  <div class="analyse-inner">
-    <div class="analyse-header">
-      <div class="section-eyebrow">Die Analyse</div>
-      <h2>Vier Dimensionen. 19 Fragen. Klares Ergebnis.</h2>
-      <p>Wir schauen auf die vier Bereiche, die entscheiden, ob AI im Customer Success funktioniert — oder ob es ein Experiment bleibt, das nie skaliert.</p>
-    </div>
-
-    <div class="dimensions-grid">
-      <div class="dimension">
-        <div class="dim-num">01</div>
-        <h3>Strategie & Signallogik</h3>
-        <p>Wisst ihr, welche Signale bei euren Kunden zählen? Und was passiert, wenn eines auftaucht? Ohne dokumentierte Signallogik landen Risiken und Chancen reaktiv im Postfach — oder gar nicht.</p>
-      </div>
-      <div class="dimension">
-        <div class="dim-num">02</div>
-        <h3>Datenbasis</h3>
-        <p>Sind eure Kundendaten dort, wo Automatisierung sie erreichen kann? Oder verteilt auf drei Systeme mit Lücken? Jede Stunde manuelle Recherche ist eine Stunde nicht aktiv im Kundenkontakt.</p>
-      </div>
-      <div class="dimension">
-        <div class="dim-num">03</div>
-        <h3>Team & Enablement</h3>
-        <p>Hat das Team die Kapazität, um KI-gestützte Workflows zu bauen und zu betreiben? Ohne dedizierte Ressourcen bleibt es bei Einzelinitiativen, die im ersten Quartal versanden.</p>
-      </div>
-      <div class="dimension">
-        <div class="dim-num">04</div>
-        <h3>Delivery & Governance</h3>
-        <p>Wer ist verantwortlich? Wie wird an die Leitung berichtet? Ohne Owner und Reporting-Rhythmus stirbt die Initiative nach dem Pilot — egal wie gut die Idee war.</p>
-      </div>
-    </div>
-
-    <div class="analyse-facts">
+    <div class="hero-facts">
       <div class="fact">
         <div class="fact-value">10 Min.</div>
         <div class="fact-label">Zeitaufwand</div>
@@ -552,52 +471,66 @@ footer a:hover { color: var(--teal); }
   </div>
 </section>
 
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="problem-inner">
+    <div class="section-eyebrow">Das Problem</div>
+    <h2>Warum die meisten KI-Projekte im CS versanden</h2>
+    <p>Es liegt selten an der Technologie. Es liegt daran, dass KI neben dem Tagesgeschäft läuft, statt darin. Ohne Anbindung ans CRM, ohne klare Signale, ohne jemanden, der es verantwortet. <strong>Workflows werden gebaut und nie wirklich genutzt</strong> — und irgendwann versickert das Projekt vollständig.</p>
+  </div>
+</section>
+
 <!-- NEXT -->
 <section class="next">
   <div class="next-inner">
-    <div class="section-eyebrow">Was danach kommt</div>
-    <h2>Ein Ergebnis, das euch weiterbringt — mit oder ohne uns.</h2>
-    <p>Nach der Analyse siehst du sofort dein Ergebnis: eine Übersicht der vier Dimensionen, deine größte Lücke, und konkrete Empfehlungen, wo es sich zu starten lohnt.</p>
+    <div class="section-eyebrow">So läuft es ab</div>
+    <h2>Euer Ergebnis gehört euch — mit oder ohne uns.</h2>
+    <p>Nach der Analyse seht ihr sofort, wo eure größte Lücke liegt und wo es sich lohnt, anzusetzen. Was ihr damit macht, entscheidet ihr.</p>
 
     <div class="next-steps">
       <div class="next-step">
         <div class="next-step-num">01</div>
-        <h4>Analyse durchmachen</h4>
-        <p>19 Fragen, 10 Minuten. Antworte so, wie die Dinge heute wirklich sind — nicht wie sie sein sollten.</p>
+        <h4>Analyse machen</h4>
+        <p>Kurzer Selbsttest, ca. 10 Minuten. Antwortet so, wie die Dinge heute wirklich sind — nicht wie sie sein sollten.</p>
       </div>
       <div class="next-step">
         <div class="next-step-num">02</div>
-        <h4>Ergebnis erhalten</h4>
-        <p>Direkt auf dem Screen: dein Readiness-Score, die primäre Lücke und konkrete nächste Schritte.</p>
+        <h4>Ergebnis sehen</h4>
+        <p>Direkt auf dem Screen: euer Readiness-Profil über vier Dimensionen, die primäre Lücke und konkrete nächste Schritte.</p>
       </div>
       <div class="next-step">
         <div class="next-step-num">03</div>
-        <h4>Gespräch (optional)</h4>
-        <p>Wenn du willst: 20 Minuten mit mir, um das Ergebnis konkret für eure Situation einzuordnen.</p>
+        <h4>Selbst handeln oder sprechen</h4>
+        <p>Die Empfehlungen funktionieren eigenständig. Wenn ihr wollt: 20 Minuten mit uns, um das Ergebnis für eure Situation einzuordnen.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT KAISER CX -->
+<!-- ABOUT POLLUP & KAISER CX -->
 <section class="about">
   <div class="about-inner">
-    <div class="section-eyebrow">Über Kaiser CX Consulting</div>
-    <h2>Vom reaktiven Kundenmanagement zu KI-gestützten CS-Prozessen.<br><span style="color: var(--teal); font-weight: 400;">Für mehr Effizienz, stärkere Kundenbindung und nachhaltiges Wachstum.</span></h2>
+    <div class="section-eyebrow">Wer dahinter steht</div>
+    <h2>Damit KI in eurem System lebt, braucht es beides:<br><span style="color: var(--teal); font-weight: 400;">jemanden, der das System kennt — und jemanden, der die KI reinbaut.</span></h2>
+
+    <p class="about-intro">Diese Analyse ist eine gemeinsame Initiative von Pollup und Kaiser CX Consulting. Wir arbeiten zusammen, weil keiner von beiden alleine reicht: CS-Prozesswissen ohne KI-Umsetzung bleibt Theorie. KI-Umsetzung ohne CS-Wissen baut am Tagesgeschäft vorbei.</p>
 
     <div class="about-content">
       <div>
-        <p>Kaiser CX Consulting begleitet B2B-SaaS-Unternehmen dabei, <strong>komplette Customer-Success-Prozesse aufzubauen und im CRM zu verankern</strong>. Statt Frameworks von der Stange gibt es konkrete Umsetzung: dokumentierte Workflows, klare Ownership, Prozesse, die skalieren.</p>
-        <p>In Partnerschaft mit <strong>Pollup AI</strong> kommt die technische Umsetzung dazu: Automatisierung von Abläufen und Flagging von Kundensignalen, die im CS-Alltag sonst unsichtbar bleiben — Churn-Risiken, Upsell-Opportunitäten, Engagement-Muster.</p>
+        <div class="about-col-label">Pollup — KI-Umsetzung</div>
+        <p>Pollup baut KI-gestützte Handlungssysteme direkt in bestehende CRM- und CS-Stacks — <strong>ohne neue Tools, ohne zusätzlichen Headcount</strong>. Aus Kundendaten werden erkennbare Signale, aus Signalen automatisierte Aktionen, die Teams im Alltag auch wirklich ausführen.</p>
+        <ul>
+          <li>EU-gehostet, datenschutzkonform, kein Vendor-Lock-in</li>
+          <li>Vorgehen: Definieren, Prototypen, Ausrollen, Befähigen</li>
+        </ul>
       </div>
       <div>
-        <p><strong>Erfahrung u. a. mit:</strong></p>
+        <div class="about-col-label">Kaiser CX — CS-Prozesstiefe</div>
+        <p>Kaiser CX Consulting bringt über <strong>15 Jahre Aufbau und Skalierung von Customer-Success-Organisationen</strong> ein — davon fast zehn Jahre in internationaler Teamverantwortung. Christiane Kaiser ist Teil beider Teams.</p>
         <ul>
-          <li>CS-Prozess-Design und daran angelehnte CRM-Systemarchitektur (z. B. Rail-Flow)</li>
-          <li>KI-gestützte Kundensignal-Analyse im B2B-SaaS zur frühzeitigen Churn- und Expansionserkennung</li>
-          <li>Aufbau und Leitung internationaler CS-Teams (z. B. Brandwatch)</li>
-          <li>Enterprise-Account-Management von Kunden wie Siemens, Roche, L'Oréal, Manchester United</li>
-          <li>Skalierung von CS-Organisationen von Scale-up bis Market Leader</li>
+          <li>CS-Prozess-Design und CRM-Systemarchitektur (u. a. Rail-Flow)</li>
+          <li>Aufbau internationaler CS-Teams (u. a. Brandwatch)</li>
+          <li>Enterprise-Erfahrung: Siemens, Roche, L'Oréal, Porsche</li>
         </ul>
       </div>
     </div>
@@ -607,15 +540,15 @@ footer a:hover { color: var(--teal); }
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
-    <h2>10 Minuten. Vier Dimensionen. Ein klares Ergebnis.</h2>
-    <p>Finde heraus, wo AI im Customer Success bei euch wirklich Sinn macht — und wo nicht.</p>
-    <a href="ki-readiness.html" class="cta-primary">Jetzt Analyse starten</a>
+    <h2>Euer System. Eure Daten. Euer Ergebnis.</h2>
+    <p>10 Minuten, kein Verkaufsgespräch. Danach wisst ihr, wo KI bei euch ansetzt — und wo nicht.</p>
+    <a href="ki-readiness.html" class="cta-primary">Analyse starten</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  © 2026 Kaiser CX Consulting · 
+  Ein gemeinsames Projekt von <a href="https://kaiser-cx.com" target="_blank" rel="noopener">Kaiser CX Consulting</a> &amp; <a href="https://pollup.ai" target="_blank" rel="noopener">Pollup</a> · 
   <a href="impressum.html">Impressum</a> ·
   <a href="datenschutz.html">Datenschutz</a>
 </footer>
