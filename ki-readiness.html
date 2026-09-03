@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Readiness im Customer Success · Pollup &amp; Kaiser CX</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue-dark: #0f3d5c;
+  --blue-mid: #1e6a9a;
+  --blue-light: #3a8fc0;
+  --teal: #5ecfdc;
+  --teal-dim: rgba(94,207,220,0.12);
+  --teal-mid: rgba(94,207,220,0.25);
+  --white: #ffffff;
+  --light-bg: #f8f9fb;
+  --ink: #0f1923;
+  --ink-mid: #4b5563;
+  --ink-light: #9ca3af;
+  --border-light: rgba(15,25,35,0.08);
+  --green: #10b981;
+  --amber: #f59e0b;
+  --red-soft: #ef4444;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Sora', sans-serif;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  background: var(--light-bg);
+  min-height: 100vh;
+}
+
+/* NAV */
+nav {
+  background: var(--blue-dark);
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-brand { display: flex; align-items: center; gap: 0.9rem; }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo-label { font-size: 0.48rem; font-weight: 200; letter-spacing: 0.2em; color: rgba(255,255,255,0.35); margin-left: 0.35rem; text-transform: uppercase; align-self: flex-end; padding-bottom: 3px; line-height: 1; }
+.nav-brand-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.15); }
+.nav-partner { font-size: 0.48rem; font-weight: 200; letter-spacing: 0.2em; color: rgba(255,255,255,0.35); text-transform: uppercase; text-decoration: none; }
+.nav-back { font-size: 0.78rem; font-weight: 400; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.nav-back:hover { color: var(--teal); }
+
+/* CONTAINER */
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 6%;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  position: sticky;
+  top: 60px;
+  z-index: 90;
+  background: var(--light-bg);
+  padding: 1.5rem 0 1rem;
+}
+.progress-track {
+  height: 3px;
+  background: var(--border-light);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.6rem;
+}
+.progress-dimension {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--blue-mid);
+  letter-spacing: 0.04em;
+}
+.progress-count {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+  font-weight: 300;
+}
+
+/* SCREENS */
+.screen {
+  display: none;
+  flex: 1;
+  padding-bottom: 3rem;
+}
+.screen.active { display: flex; flex-direction: column; }
+
+/* INTRO SCREEN */
+.intro {
+  justify-content: center;
+  padding-top: 4rem;
+}
+.intro h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.intro h1 span { color: var(--teal); }
+.intro p {
+  font-size: 1rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 1rem;
+}
+.intro-facts {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+.intro-fact-value {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--blue-dark);
+}
+.intro-fact-label {
+  font-size: 0.8rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+}
+.btn-start {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--teal);
+  color: var(--blue-dark);
+  padding: 1rem 2rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.btn-start:hover {
+  background: var(--blue-dark);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* QUESTION SCREEN */
+.question-screen { padding-top: 2rem; }
+.dimension-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--blue-mid);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.8rem;
+}
+.question-text {
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin-bottom: 2rem;
+}
+.options { display: flex; flex-direction: column; gap: 0.75rem; }
+.option {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 1.1rem 1.4rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+.option:hover {
+  border-color: var(--teal);
+  background: rgba(94,207,220,0.04);
+}
+.option.selected {
+  border-color: var(--teal);
+  background: var(--teal-dim);
+  font-weight: 400;
+}
+.question-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+.btn-back {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ink-mid);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color 0.2s;
+}
+.btn-back:hover { color: var(--ink); }
+.btn-back.hidden { visibility: hidden; }
+
+/* RESULT SCREEN */
+.result { padding-top: 2.5rem; }
+.result-header {
+  margin-bottom: 2.5rem;
+}
+.result-archetype-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--blue-mid);
+  margin-bottom: 0.6rem;
+}
+.result-archetype-name {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.result-description {
+  font-size: 1rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 620px;
+}
+.result-chart-container {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.result-dimensions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border-light);
+  margin-bottom: 2.5rem;
+}
+.result-dim {
+  background: white;
+  padding: 1.6rem;
+}
+.result-dim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.result-dim-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.result-dim-level {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+.level-low { background: rgba(239,68,68,0.1); color: var(--red-soft); }
+.level-mid { background: rgba(245,158,11,0.1); color: var(--amber); }
+.level-high { background: rgba(16,185,129,0.1); color: var(--green); }
+.result-dim-bar {
+  height: 3px;
+  background: var(--border-light);
+  border-radius: 2px;
+  margin-bottom: 0.8rem;
+}
+.result-dim-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+.result-dim-text {
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  line-height: 1.6;
+}
+.result-recommendation {
+  background: var(--blue-dark);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+.result-rec-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--teal);
+  margin-bottom: 0.8rem;
+}
+.result-rec-text {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 300;
+  line-height: 1.7;
+}
+.result-rec-text strong {
+  color: white;
+  font-weight: 500;
+}
+.result-cta {
+  text-align: center;
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--border-light);
+}
+.result-cta p {
+  font-size: 0.95rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--teal);
+  color: var(--blue-dark);
+  padding: 1rem 2rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.btn-cta:hover {
+  background: var(--blue-dark);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.result-own {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.result-own p {
+  font-size: 0.85rem;
+  color: var(--ink-light);
+  font-weight: 300;
+}
+.btn-restart {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ink-mid);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.btn-restart:hover { color: var(--ink); }
+
+/* GATE WARNING */
+.gate-warning {
+  background: rgba(245,158,11,0.08);
+  border: 1px solid rgba(245,158,11,0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.gate-warning-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--amber);
+  margin-bottom: 0.5rem;
+}
+.gate-warning-text {
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+  background: #071f30;
+  padding: 30px 6%;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 300;
+}
+footer a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  margin: 0 0.6rem;
+}
+footer a:hover { color: var(--teal); }
+
+@media (max-width: 768px) {
+  .intro-facts { flex-direction: column; gap: 1rem; }
+  .result-dimensions { grid-template-columns: 1fr; }
+  .question-text { font-size: 1.1rem; }
+  .option { padding: 1rem 1.2rem; font-size: 0.88rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <a href="index.html" class="nav-logo">
+      <svg height="28" viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="18" y1="15" x2="18" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="18" y1="70" x2="48" y2="15" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="18" y1="70" x2="48" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="94" y1="15" x2="70" y2="32" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="70" y1="32" x2="70" y2="108" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="70" y1="108" x2="94" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-logo-label">KAISER CX</span>
+    </a>
+    <span class="nav-brand-divider"></span>
+    <a href="https://pollup.ai" target="_blank" rel="noopener" class="nav-partner">Pollup</a>
+  </div>
+  <a href="ki-diagnose.html" class="nav-back">Zurück zur Übersicht</a>
+</nav>
+
+<div class="app">
+
+  <!-- PROGRESS -->
+  <div class="progress-bar" id="progressBar" style="display:none;">
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-meta">
+      <span class="progress-dimension" id="progressDimension"></span>
+      <span class="progress-count" id="progressCount"></span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="screen active" id="introScreen">
+    <div class="intro">
+      <h1>Wie bereit ist euer System für <span>KI im Customer Success</span>?</h1>
+      <p>Dieser Test prüft vier Dimensionen: eure Signale, Prozesse, Infrastruktur und Ownership. Am Ende seht ihr, wo eure größte Lücke liegt — und wo es sich lohnt, anzusetzen.</p>
+      <p>Antwortet so, wie die Dinge heute wirklich sind. Nicht wie sie sein sollten.</p>
+      <div class="intro-facts">
+        <div>
+          <div class="intro-fact-value">~10 Min.</div>
+          <div class="intro-fact-label">Zeitaufwand</div>
+        </div>
+        <div>
+          <div class="intro-fact-value">4 Dimensionen</div>
+          <div class="intro-fact-label">Konkrete Auswertung</div>
+        </div>
+        <div>
+          <div class="intro-fact-value">Sofort</div>
+          <div class="intro-fact-label">Ergebnis direkt hier</div>
+        </div>
+      </div>
+      <button class="btn-start" onclick="startAssessment()">Test starten</button>
+    </div>
+  </div>
+
+  <!-- QUESTION SCREEN (dynamically filled) -->
+  <div class="screen" id="questionScreen">
+    <div class="question-screen">
+      <div class="dimension-label" id="qDimLabel"></div>
+      <div class="question-text" id="qText"></div>
+      <div class="options" id="qOptions"></div>
+      <div class="question-nav">
+        <button class="btn-back" id="btnBack" onclick="goBack()">Zurück</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div class="screen" id="resultScreen">
+    <div class="result">
+      <div class="result-header">
+        <div class="result-archetype-label">Euer Ergebnis</div>
+        <div class="result-archetype-name" id="archetypeName"></div>
+        <div class="result-description" id="archetypeDesc"></div>
+      </div>
+      <div class="result-chart-container">
+        <svg id="radarChart" viewBox="0 0 320 320" width="300" height="300"></svg>
+      </div>
+      <div id="gateWarning"></div>
+      <div class="result-dimensions" id="resultDimensions"></div>
+      <div class="result-recommendation" id="resultRec">
+        <div class="result-rec-label">Unsere Einschätzung</div>
+        <div class="result-rec-text" id="recText"></div>
+      </div>
+      <div class="result-cta">
+        <p>Wenn ihr das Ergebnis gemeinsam einordnen wollt — 20 Minuten, kein Pitch.</p>
+        <a href="https://calendly.com" class="btn-cta" target="_blank" rel="noopener">Gespräch buchen</a>
+      </div>
+      <div class="result-own">
+        <p>Euer Ergebnis gehört euch. Was ihr damit macht, entscheidet ihr.</p>
+        <button class="btn-restart" onclick="restart()">Test wiederholen</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Ein gemeinsames Projekt von <a href="https://kaiser-cx.com" target="_blank" rel="noopener">Kaiser CX Consulting</a> &amp; <a href="https://pollup.ai" target="_blank" rel="noopener">Pollup</a> · 
+  <a href="impressum.html">Impressum</a> ·
+  <a href="datenschutz.html">Datenschutz</a>
+</footer>
+
+<script>
+const DIMENSIONS = [
+  { key: 'context', label: 'Kontext', scored: false },
+  { key: 'signale', label: 'Signale', scored: true },
+  { key: 'prozesse', label: 'Prozesse', scored: true },
+  { key: 'infrastruktur', label: 'Infrastruktur', scored: true },
+  { key: 'ownership', label: 'Ownership', scored: true }
+];
+
+const QUESTIONS = [
+  // CONTEXT (unscored)
+  {
+    dim: 'context',
+    text: 'Wie groß ist euer CS-Team?',
+    options: [
+      { label: '1–3 Personen', value: 'xs' },
+      { label: '4–10 Personen', value: 'sm' },
+      { label: '11–25 Personen', value: 'md' },
+      { label: 'Über 25 Personen', value: 'lg' }
+    ]
+  },
+  {
+    dim: 'context',
+    text: 'Wie viele Accounts betreut ein CSM im Schnitt?',
+    options: [
+      { label: 'Unter 20', value: 'few' },
+      { label: '20–50', value: 'mid' },
+      { label: '50–100', value: 'many' },
+      { label: 'Über 100', value: 'mass' }
+    ]
+  },
+  {
+    dim: 'context',
+    text: 'Welches CRM nutzt ihr?',
+    options: [
+      { label: 'HubSpot', value: 'hubspot' },
+      { label: 'Salesforce', value: 'salesforce' },
+      { label: 'Pipedrive', value: 'pipedrive' },
+      { label: 'Anderes oder keins', value: 'other' }
+    ]
+  },
+
+  // SIGNALE
+  {
+    dim: 'signale',
+    text: 'Wie erfahrt ihr aktuell, dass ein Kunde abwanderungsgefährdet ist?',
+    options: [
+      { label: 'Bei Kündigung oder kurz davor', score: 0 },
+      { label: 'Bauchgefühl einzelner CSMs', score: 1 },
+      { label: 'Wir haben definierte Warnsignale, reagieren aber nicht systematisch darauf', score: 2 },
+      { label: 'Wir haben definierte Signale und handeln aktiv, wenn sie auftreten', score: 3 }
+    ]
+  },
+  {
+    dim: 'signale',
+    text: 'Welche Kundendaten fließen aktuell in eure CS-Entscheidungen ein?',
+    options: [
+      { label: 'Hauptsächlich was im CRM steht — Vertragsdaten, letzte Aktivität', score: 0 },
+      { label: 'CRM und Support-Tickets', score: 1 },
+      { label: 'CRM, Support und Produktnutzungsdaten', score: 2 },
+      { label: 'Alles oben, plus Kommunikationsverhalten und Engagement-Muster', score: 3 }
+    ]
+  },
+  {
+    dim: 'signale',
+    text: 'Wie schnell bemerkt ihr, wenn sich bei einem Kunden etwas verändert — Nutzung sinkt, Ansprechpartner wechselt, Engagement lässt nach?',
+    options: [
+      { label: 'Meistens erst wenn es zu spät ist', score: 0 },
+      { label: 'Innerhalb von Wochen, wenn jemand manuell reinschaut', score: 1 },
+      { label: 'Innerhalb von Tagen, durch regelmäßige Reports', score: 2 },
+      { label: 'Am gleichen Tag, weil es automatisiert sichtbar wird', score: 3 }
+    ]
+  },
+  {
+    dim: 'signale',
+    text: 'Für wie viele eurer Accounts habt ihr ein aktuelles, belastbares Bild der Kundensituation?',
+    options: [
+      { label: 'Nur für die größten oder strategischen', score: 0 },
+      { label: 'Für die oberen 30–40 %', score: 1 },
+      { label: 'Für die meisten, aber mit Lücken', score: 2 },
+      { label: 'Für praktisch alle, regelmäßig aktualisiert', score: 3 }
+    ]
+  },
+
+  // PROZESSE
+  {
+    dim: 'prozesse',
+    text: 'Wie standardisiert sind eure CS-Abläufe — Onboarding, QBRs, Eskalationen?',
+    options: [
+      { label: 'Jeder macht es etwas anders', score: 0 },
+      { label: 'Informelle Absprachen, aber nichts Dokumentiertes', score: 1 },
+      { label: 'Dokumentiert, aber nicht konsequent eingehalten', score: 2 },
+      { label: 'Klar definiert, dokumentiert und vom Team gelebt', score: 3 }
+    ]
+  },
+  {
+    dim: 'prozesse',
+    text: 'Wenn ein Risiko-Signal auftaucht — sinkende Nutzung, offene Tickets, kein Engagement — gibt es einen definierten nächsten Schritt?',
+    options: [
+      { label: 'Nein, hängt vom einzelnen CSM ab', score: 0 },
+      { label: 'Faustregeln, aber nichts Festgeschriebenes', score: 1 },
+      { label: 'Dokumentierte Playbooks für die wichtigsten Szenarien', score: 2 },
+      { label: 'Playbooks existieren und werden aktiv genutzt und weiterentwickelt', score: 3 }
+    ]
+  },
+  {
+    dim: 'prozesse',
+    text: 'Wie segmentiert ihr eure Accounts für die Betreuung?',
+    options: [
+      { label: 'Gar nicht — alle werden gleich behandelt', score: 0 },
+      { label: 'Grob nach ARR oder Vertragsgröße', score: 1 },
+      { label: 'Nach mehreren Kriterien wie ARR, Potenzial und Lifecycle-Phase', score: 2 },
+      { label: 'Dynamisch, basierend auf Signalen und Kundensituation', score: 3 }
+    ]
+  },
+  {
+    dim: 'prozesse',
+    text: 'Was passiert aktuell mit euren Low-ARR- oder Long-Tail-Accounts?',
+    options: [
+      { label: 'Praktisch nichts — dafür fehlt die Kapazität', score: 0 },
+      { label: 'Generische Mails oder Newsletter', score: 1 },
+      { label: 'Ein definierter Low-Touch-Prozess, aber wenig Personalisierung', score: 2 },
+      { label: 'Automatisiert und trotzdem individuell angepasst', score: 3 }
+    ]
+  },
+
+  // INFRASTRUKTUR
+  {
+    dim: 'infrastruktur',
+    text: 'Wo liegen eure relevanten Kundendaten — Nutzung, Tickets, Vertragsdaten, Kommunikation?',
+    options: [
+      { label: 'Verteilt über mehrere Systeme, kein zentraler Überblick', score: 0 },
+      { label: 'Hauptsächlich im CRM, aber mit Lücken und manuellen Ergänzungen', score: 1 },
+      { label: 'Im CRM als führendes System, ergänzt durch angebundene Tools', score: 2 },
+      { label: 'Zentral, aktuell und über Schnittstellen verbunden', score: 3 }
+    ]
+  },
+  {
+    dim: 'infrastruktur',
+    text: 'Wie verlässlich sind die Daten in eurem CRM?',
+    options: [
+      { label: 'Lückenhaft — vieles ist veraltet oder fehlt', score: 0 },
+      { label: 'Grunddaten stimmen, aber es gibt blinde Flecken', score: 1 },
+      { label: 'Überwiegend aktuell, weil das Team regelmäßig pflegt', score: 2 },
+      { label: 'Aktuell und konsistent, weil Prozesse die Datenpflege erzwingen', score: 3 }
+    ]
+  },
+  {
+    dim: 'infrastruktur',
+    text: 'Nutzt ihr bereits Automatisierungen im CS-Alltag — automatische Aufgaben, Alerts, E-Mail-Sequenzen?',
+    options: [
+      { label: 'Nein, alles manuell', score: 0 },
+      { label: 'Vereinzelt, z. B. eine Willkommensmail oder Reminder', score: 1 },
+      { label: 'Mehrere automatisierte Workflows, aber nicht systematisch verbunden', score: 2 },
+      { label: 'Automatisierung ist fester Bestandteil unserer CS-Abläufe', score: 3 }
+    ]
+  },
+  {
+    dim: 'infrastruktur',
+    text: 'Könnten eure Systeme morgen ein neues Signal empfangen und automatisch eine Aktion auslösen — technisch?',
+    options: [
+      { label: 'Keine Ahnung — vermutlich nicht', score: 0 },
+      { label: 'Theoretisch ja, aber es müsste erst jemand aufsetzen', score: 1 },
+      { label: 'Ja, die Infrastruktur steht, es fehlen die richtigen Trigger', score: 2 },
+      { label: 'Ja, wir machen das schon für einzelne Fälle', score: 3 }
+    ]
+  },
+
+  // OWNERSHIP
+  {
+    dim: 'ownership',
+    text: 'Wer treibt das Thema KI und Automatisierung im CS bei euch voran?',
+    options: [
+      { label: 'Niemand konkret', score: 0 },
+      { label: 'Jemand im CS-Team macht es nebenbei', score: 1 },
+      { label: 'Es gibt eine benannte Person, aber ohne dedizierte Zeit', score: 2 },
+      { label: 'Klare Ownership mit Zeit, Mandat und Rückendeckung', score: 3 }
+    ]
+  },
+  {
+    dim: 'ownership',
+    text: 'Wie steht euer Leadership zum Thema KI im CS?',
+    options: [
+      { label: 'Kaum auf dem Radar', score: 0 },
+      { label: 'Grundsätzlich offen, aber keine aktive Unterstützung', score: 1 },
+      { label: 'Klares Mandat, aber noch keine konkreten Schritte', score: 2 },
+      { label: 'Aktiv unterstützt, mit Budget und Erwartungen', score: 3 }
+    ]
+  },
+  {
+    dim: 'ownership',
+    text: 'Gibt es Budget für KI- oder Automatisierungsprojekte im CS für die nächsten 12 Monate?',
+    options: [
+      { label: 'Nein', score: 0 },
+      { label: 'Noch nicht, aber es könnte freigegeben werden', score: 1 },
+      { label: 'Ja, aber noch nicht allokiert', score: 2 },
+      { label: 'Ja, konkret eingeplant', score: 3 }
+    ]
+  },
+  {
+    dim: 'ownership',
+    text: 'Datenschutz und IT-Security bei KI-Tools: Blocker oder geklärt?',
+    options: [
+      { label: 'Großer Blocker, noch gar nicht besprochen', score: 0 },
+      { label: 'Ungeklärt, aber vermutlich lösbar', score: 1 },
+      { label: 'Grundsätzlich geklärt, Einzelfallprüfung nötig', score: 2 },
+      { label: 'Kein Blocker, Rahmenbedingungen stehen', score: 3 }
+    ]
+  }
+];
+
+const DIMENSION_SUMMARIES = {
+  signale: {
+    low: 'Euer Team arbeitet weitgehend ohne systematische Kundensignale. Risiken und Chancen tauchen reaktiv auf oder werden gar nicht erkannt.',
+    mid: 'Ihr habt einzelne Signale im Blick, aber keine durchgängige Sichtbarkeit. Vieles hängt davon ab, wer gerade hinschaut.',
+    high: 'Ihr habt eine solide Signalbasis, auf der KI-gestützte Automatisierung aufbauen kann.'
+  },
+  prozesse: {
+    low: 'Eure CS-Abläufe sind nicht standardisiert. Ohne definierte Prozesse gibt es nichts, woran Automatisierung andocken kann.',
+    mid: 'Grundstrukturen existieren — Playbooks, Segmentierung — aber sie greifen nicht flächendeckend. Die Lücke liegt zwischen Dokumentation und gelebtem Alltag.',
+    high: 'Eure Prozesse sind definiert und gelebt. Das ist die Voraussetzung dafür, dass KI Abläufe übernehmen kann, statt sie zu erfinden.'
+  },
+  infrastruktur: {
+    low: 'Eure Daten sind fragmentiert und eure Systeme nicht für Automatisierung vorbereitet. Bevor KI greifen kann, braucht ihr eine technische Grundlage.',
+    mid: 'Das CRM ist da, erste Automatisierungen laufen. Aber die Systeme sind noch nicht so verbunden, dass KI durchgängig arbeiten kann.',
+    high: 'Eure Infrastruktur ist bereit: Daten fließen, Systeme sind verbunden, Automatisierung ist technisch möglich.'
+  },
+  ownership: {
+    low: 'Es gibt weder Ownership noch Mandat für KI im CS. Ohne das stirbt jede Initiative nach dem Piloten.',
+    mid: 'Es gibt Interesse und erste Strukturen, aber noch keine klare Verantwortung mit Zeit und Budget.',
+    high: 'Ownership, Budget und Rückendeckung stehen. Ihr könnt loslegen.'
+  }
+};
+
+const ARCHETYPES = {
+  blindflug: {
+    name: 'Blindflug',
+    desc: 'Euer CS arbeitet weitgehend ohne systematische Signale, ohne standardisierte Prozesse und ohne technische Grundlage für Automatisierung. KI ist hier zu früh — der erste Schritt ist, Basisstrukturen aufzubauen: welche Signale zählen, welche Prozesse es gibt, wo die Daten liegen.',
+    rec: 'Wir empfehlen, <strong>zuerst Klarheit über eure CS-Prozesse und Datenlandschaft zu schaffen</strong>, bevor ihr über KI nachdenkt. Ein strukturierter Audit eurer CS-Abläufe und eures CRM-Setups zeigt, welche Grundlagen fehlen — und welche schneller zu schließen sind, als ihr denkt.'
+  },
+  bauchgefuehl: {
+    name: 'Bauchgefühl-Betrieb',
+    desc: 'Euer Team hat Gespür für Kunden, aber es gibt keine systematische Signallogik und keine dokumentierten Abläufe. Wissen lebt in Köpfen, nicht in Systemen. Das funktioniert bei 30 Accounts — aber nicht bei 200.',
+    rec: 'Der größte Hebel liegt darin, <strong>das implizite Wissen eures Teams in dokumentierte Trigger und Playbooks zu übersetzen</strong>. Erst wenn definiert ist, welches Signal welchen nächsten Schritt auslöst, kann Automatisierung greifen.'
+  },
+  papier_prozesse: {
+    name: 'Papier-Prozesse',
+    desc: 'Ihr habt Playbooks, Segmentierung und dokumentierte Abläufe — aber die Kapazität fehlt, sie konsequent umzusetzen. Das Team weiß, was zu tun wäre, kommt aber nicht dazu. Genau hier liegt der stärkste Hebel für Automatisierung.',
+    rec: '<strong>Das ist der direkteste Einstieg für KI-gestützte Automatisierung.</strong> Eure Prozesse sind da, eure Logik steht — was fehlt, ist die Ausführungsschicht. Signal-to-Action-Workflows können die Lücke zwischen Playbook und Alltag schließen, ohne dass jemand zusätzlich eingestellt werden muss.'
+  },
+  heldentum: {
+    name: 'Heldenhafte Handarbeit',
+    desc: 'Eure Signalbasis ist gut und euer Team arbeitet engagiert — aber alles läuft manuell. Jede Reaktion, jeder Check, jede Aktion kostet Zeit. Die Long-Tail-Accounts bleiben liegen, weil die Kapazität für die Top-Accounts draufgeht.',
+    rec: 'Der Hebel liegt in der <strong>Automatisierung der Action-Schicht</strong>: Alerts, die nicht im Postfach verschwinden, sondern direkt eine Aufgabe auslösen. Sequenzen für Low-Touch-Accounts, die trotzdem persönlich wirken. Euer Team soll sich auf die Gespräche konzentrieren, die wirklich zählen.'
+  },
+  skalierbereit: {
+    name: 'Skalierbereit',
+    desc: 'Eure Grundlagen stehen: Signale, Prozesse, Infrastruktur und Ownership sind auf solidem Niveau. Ihr braucht keine neue Strategie — ihr braucht die letzte Automatisierungsschicht, die das System zum Laufen bringt.',
+    rec: '<strong>Gezielte Erweiterung statt Neuaufbau.</strong> Euer System ist bereit — jetzt geht es darum, die richtigen Trigger zu definieren, die Aktionen zu automatisieren und die Wirkung messbar zu machen. Das ist ein Projekt mit klarem Scope, nicht ein Transformationsprogramm.'
+  }
+};
+
+let currentQuestion = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function startAssessment() {
+  currentQuestion = 0;
+  answers.fill(null);
+  document.getElementById('progressBar').style.display = 'block';
+  showScreen('questionScreen');
+  renderQuestion();
+}
+
+function restart() {
+  document.getElementById('progressBar').style.display = 'none';
+  showScreen('introScreen');
+}
+
+function getDimensionLabel(dimKey) {
+  const d = DIMENSIONS.find(d => d.key === dimKey);
+  return d ? d.label : dimKey;
+}
+
+function renderQuestion() {
+  const q = QUESTIONS[currentQuestion];
+  const dimLabel = getDimensionLabel(q.dim);
+  const totalScored = QUESTIONS.filter(q2 => q2.dim !== 'context').length;
+  const contextCount = QUESTIONS.filter(q2 => q2.dim === 'context').length;
+
+  // Progress
+  const pct = ((currentQuestion + 1) / QUESTIONS.length) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+
+  if (q.dim === 'context') {
+    document.getElementById('progressDimension').textContent = 'Kontext';
+  } else {
+    document.getElementById('progressDimension').textContent = dimLabel;
+  }
+  document.getElementById('progressCount').textContent = (currentQuestion + 1) + ' / ' + QUESTIONS.length;
+
+  // Question
+  document.getElementById('qDimLabel').textContent = q.dim === 'context' ? 'Kontext' : dimLabel;
+  document.getElementById('qText').textContent = q.text;
+
+  // Options
+  const container = document.getElementById('qOptions');
+  container.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option' + (answers[currentQuestion] === i ? ' selected' : '');
+    btn.textContent = opt.label;
+    btn.onclick = () => selectOption(i);
+    container.appendChild(btn);
+  });
+
+  // Back button
+  const backBtn = document.getElementById('btnBack');
+  backBtn.className = currentQuestion === 0 ? 'btn-back hidden' : 'btn-back';
+}
+
+function selectOption(idx) {
+  answers[currentQuestion] = idx;
+
+  // Highlight selection briefly
+  document.querySelectorAll('.option').forEach((o, i) => {
+    o.className = i === idx ? 'option selected' : 'option';
+  });
+
+  // Auto-advance after brief pause
+  setTimeout(() => {
+    if (currentQuestion < QUESTIONS.length - 1) {
+      currentQuestion++;
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  }, 300);
+}
+
+function goBack() {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    renderQuestion();
+  }
+}
+
+function calcScores() {
+  const scores = { signale: 0, prozesse: 0, infrastruktur: 0, ownership: 0 };
+  QUESTIONS.forEach((q, i) => {
+    if (q.dim === 'context' || answers[i] === null) return;
+    scores[q.dim] += q.options[answers[i]].score;
+  });
+  return scores;
+}
+
+function getLevel(score) {
+  if (score <= 4) return 'low';
+  if (score <= 8) return 'mid';
+  return 'high';
+}
+
+function getLevelLabel(level) {
+  if (level === 'low') return 'Niedrig';
+  if (level === 'mid') return 'Mittel';
+  return 'Hoch';
+}
+
+function getArchetype(scores) {
+  const levels = {};
+  for (const k in scores) levels[k] = getLevel(scores[k]);
+
+  const allLow = Object.values(levels).every(l => l === 'low');
+  if (allLow) return 'blindflug';
+
+  const avgScore = (scores.signale + scores.prozesse + scores.infrastruktur) / 3;
+
+  if (levels.signale !== 'high' && levels.prozesse === 'low') return 'bauchgefuehl';
+  if (levels.prozesse !== 'low' && levels.infrastruktur !== 'high' && avgScore <= 8) return 'papier_prozesse';
+  if (levels.signale !== 'low' && levels.infrastruktur !== 'high') return 'heldentum';
+  return 'skalierbereit';
+}
+
+function drawRadar(scores) {
+  const svg = document.getElementById('radarChart');
+  const cx = 160, cy = 160, maxR = 120;
+  const dims = ['signale', 'prozesse', 'infrastruktur', 'ownership'];
+  const labels = ['Signale', 'Prozesse', 'Infrastruktur', 'Ownership'];
+  const angles = dims.map((_, i) => (Math.PI * 2 * i / dims.length) - Math.PI / 2);
+
+  let html = '';
+
+  // Grid rings
+  [0.33, 0.66, 1].forEach(r => {
+    const pts = angles.map(a => {
+      const x = cx + Math.cos(a) * maxR * r;
+      const y = cy + Math.sin(a) * maxR * r;
+      return x + ',' + y;
+    }).join(' ');
+    html += `<polygon points="${pts}" fill="none" stroke="rgba(15,25,35,0.06)" stroke-width="1"/>`;
+  });
+
+  // Axis lines
+  angles.forEach(a => {
+    const x = cx + Math.cos(a) * maxR;
+    const y = cy + Math.sin(a) * maxR;
+    html += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(15,25,35,0.06)" stroke-width="1"/>`;
+  });
+
+  // Data polygon
+  const dataPts = dims.map((d, i) => {
+    const val = scores[d] / 12; // 0–1
+    const x = cx + Math.cos(angles[i]) * maxR * val;
+    const y = cy + Math.sin(angles[i]) * maxR * val;
+    return x + ',' + y;
+  }).join(' ');
+  html += `<polygon points="${dataPts}" fill="rgba(94,207,220,0.15)" stroke="#5ecfdc" stroke-width="2"/>`;
+
+  // Data points
+  dims.forEach((d, i) => {
+    const val = scores[d] / 12;
+    const x = cx + Math.cos(angles[i]) * maxR * val;
+    const y = cy + Math.sin(angles[i]) * maxR * val;
+    html += `<circle cx="${x}" cy="${y}" r="4" fill="#5ecfdc"/>`;
+  });
+
+  // Labels
+  const labelOffsets = [
+    { dx: 0, dy: -12, anchor: 'middle' },
+    { dx: 14, dy: 5, anchor: 'start' },
+    { dx: 0, dy: 18, anchor: 'middle' },
+    { dx: -14, dy: 5, anchor: 'end' }
+  ];
+  labels.forEach((l, i) => {
+    const x = cx + Math.cos(angles[i]) * (maxR + 20) + labelOffsets[i].dx;
+    const y = cy + Math.sin(angles[i]) * (maxR + 20) + labelOffsets[i].dy;
+    html += `<text x="${x}" y="${y}" text-anchor="${labelOffsets[i].anchor}" font-family="Sora,sans-serif" font-size="12" font-weight="500" fill="#0f3d5c">${l}</text>`;
+  });
+
+  svg.innerHTML = html;
+}
+
+function showResult() {
+  document.getElementById('progressBar').style.display = 'none';
+  const scores = calcScores();
+  const archKey = getArchetype(scores);
+  const arch = ARCHETYPES[archKey];
+
+  // Header
+  document.getElementById('archetypeName').textContent = arch.name;
+  document.getElementById('archetypeDesc').textContent = arch.desc;
+
+  // Radar
+  drawRadar(scores);
+
+  // Ownership gate warning
+  const ownershipLevel = getLevel(scores.ownership);
+  const gateEl = document.getElementById('gateWarning');
+  if (ownershipLevel === 'low') {
+    gateEl.innerHTML = `<div class="gate-warning">
+      <div class="gate-warning-title">Ownership ist der Blocker</div>
+      <div class="gate-warning-text">Unabhängig davon, wie eure Signale, Prozesse und Infrastruktur aussehen: Ohne Ownership, Budget und Mandat stirbt jede KI-Initiative nach dem Piloten. Der erste Schritt ist intern — nicht technisch.</div>
+    </div>`;
+  } else {
+    gateEl.innerHTML = '';
+  }
+
+  // Dimension cards
+  const dimsEl = document.getElementById('resultDimensions');
+  dimsEl.innerHTML = '';
+  const scoredDims = ['signale', 'prozesse', 'infrastruktur', 'ownership'];
+  scoredDims.forEach(key => {
+    const score = scores[key];
+    const level = getLevel(score);
+    const pct = Math.round((score / 12) * 100);
+    const summary = DIMENSION_SUMMARIES[key][level];
+    const colors = { low: 'var(--red-soft)', mid: 'var(--amber)', high: 'var(--green)' };
+
+    dimsEl.innerHTML += `<div class="result-dim">
+      <div class="result-dim-header">
+        <span class="result-dim-name">${getDimensionLabel(key)}</span>
+        <span class="result-dim-level level-${level}">${getLevelLabel(level)}</span>
+      </div>
+      <div class="result-dim-bar"><div class="result-dim-bar-fill" style="width:${pct}%;background:${colors[level]}"></div></div>
+      <div class="result-dim-text">${summary}</div>
+    </div>`;
+  });
+
+  // Recommendation
+  document.getElementById('recText').innerHTML = arch.rec;
+
+  showScreen('resultScreen');
+}
+</script>
+
+</body>
+</html>
