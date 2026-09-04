@@ -1155,9 +1155,61 @@ footer {
 <section class="cta-section" id="kontakt">
   <h2>Ready to turn CS into a <span>growth lever?</span></h2>
   <p>30 minutes. No sales pitch. I'll look at your setup and tell you honestly whether a pilot makes sense.</p>
-  <a href="https://calendly.com/christiane-kaiser-cx/ai-for-cs" class="cta-btn">Book a call →</a>
-  <p class="cta-note">Or write directly: <a href="mailto:christiane@kaiser-cx.com">christiane@kaiser-cx.com</a></p>
+  <a href="https://calendly.com/christiane-kaiser-cx/ai-for-cs" class="cta-btn" style="margin-bottom:2.5rem;">Book a call →</a>
+
+  <div style="max-width:560px; margin:0 auto; text-align:left;">
+    <div style="border-top:1px solid rgba(255,255,255,0.15); margin-bottom:2.5rem;"></div>
+    <p style="font-size:0.82rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.4); font-weight:500; margin-bottom:1.5rem; text-align:center;">Or send a message</p>
+
+    <form id="contact-form" action="https://formspree.io/f/xpqolplw" method="POST" style="display:flex; flex-direction:column; gap:0.9rem;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.9rem;">
+        <div>
+          <input type="text" name="name" placeholder="Name *" required
+            style="width:100%; padding:0.75rem 1rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:2px; color:white; font-family:'Sora',sans-serif; font-size:0.88rem; outline:none;">
+        </div>
+        <div>
+          <input type="text" name="company" placeholder="Company *" required
+            style="width:100%; padding:0.75rem 1rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:2px; color:white; font-family:'Sora',sans-serif; font-size:0.88rem; outline:none;">
+        </div>
+      </div>
+      <input type="email" name="email" placeholder="Email *" required
+        style="width:100%; padding:0.75rem 1rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:2px; color:white; font-family:'Sora',sans-serif; font-size:0.88rem; outline:none;">
+      <input type="tel" name="phone" placeholder="Phone (optional)"
+        style="width:100%; padding:0.75rem 1rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:2px; color:white; font-family:'Sora',sans-serif; font-size:0.88rem; outline:none;">
+      <textarea name="message" placeholder="Message *" required rows="4"
+        style="width:100%; padding:0.75rem 1rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:2px; color:white; font-family:'Sora',sans-serif; font-size:0.88rem; outline:none; resize:vertical;"></textarea>
+      <button type="submit"
+        style="background:var(--teal); color:#0f3d5c; border:none; padding:0.9rem 2rem; font-family:'Sora',sans-serif; font-size:0.95rem; font-weight:700; border-radius:2px; cursor:pointer; transition:opacity 0.2s;">
+        Send message →
+      </button>
+    </form>
+    <div id="contact-success" style="display:none; text-align:center; padding:2rem 0;">
+      <p style="color:var(--teal); font-size:1rem; font-weight:500;">Message sent — I'll be in touch shortly.</p>
+    </div>
+    <p style="font-size:0.75rem; color:rgba(255,255,255,0.25); text-align:center; margin-top:1rem;">
+      By submitting you agree to our <a href="datenschutz.html" style="color:rgba(255,255,255,0.35);">Privacy Policy</a>.
+    </p>
+  </div>
 </section>
+
+<script>
+const form = document.getElementById('contact-form');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('contact-success').style.display = 'block';
+    }
+  });
+}
+</script>
 
 <footer>
   <span>© 2025 Kaiser CX Consulting</span>
