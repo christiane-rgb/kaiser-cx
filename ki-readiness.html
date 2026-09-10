@@ -632,6 +632,7 @@ footer a:hover { color: var(--teal); }
               <div class="form-field"><input type="text" name="Unternehmen" placeholder="Unternehmen" required></div>
               <div class="form-field"><input type="email" name="E-Mail" placeholder="E-Mail" required></div>
               <input type="hidden" name="Ergebnis" id="formResultSummary">
+              <input type="hidden" name="Alle Antworten" id="formFullAnswers">
               <input type="hidden" name="_subject" value="Neue Anfrage: CS-KI-Readiness-Auswertung">
               <input type="hidden" name="Formular" value="KI-Readiness-Diagnose">
               <button type="submit" class="btn-form-submit">Auswertung anfordern</button>
@@ -1060,6 +1061,23 @@ function getOverallBadgeLabel(level) {
   return 'Grün · Bereit';
 }
 
+function buildFullAnswerTranscript() {
+  const lines = [];
+  let lastDim = null;
+  QUESTIONS.forEach((q, i) => {
+    if (q.dim !== lastDim) {
+      lastDim = q.dim;
+      lines.push('');
+      lines.push('=== ' + getDimensionLabel(q.dim).toUpperCase() + ' ===');
+    }
+    const chosen = answers[i];
+    const answerText = (chosen === null || chosen === undefined) ? '(keine Antwort)' : q.options[chosen].label;
+    lines.push('F: ' + q.text);
+    lines.push('A: ' + answerText);
+  });
+  return lines.join('\n').trim();
+}
+
 function showResult() {
   document.getElementById('progressBar').style.display = 'none';
   const scores = calcScores();
@@ -1129,6 +1147,7 @@ function showResult() {
     'Größte Lücke: ' + gapSummary
   ];
   document.getElementById('formResultSummary').value = summaryLines.join('\n');
+  document.getElementById('formFullAnswers').value = buildFullAnswerTranscript();
 
   showScreen('resultScreen');
 }
