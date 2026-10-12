@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights — Kaiser CX</title>
+<meta name="description" content="Case study, whitepaper and newsletter from Kaiser CX: how Agentic AI turns customer signals into retention and expansion.">
+<link rel="canonical" href="https://kaiser-cx.com/insights.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{--navy:#0f3d5c;--deep:#071f30;--mid:#1e6a9a;--teal:#5ecfdc;--bg-light:#e8f4f8;--ink:#0f1923;--ink-2:#4a6a7a;--ink-3:#24485e;--line:#dfe8ee;--on-dark:#c9dce8;--radius:16px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Sora',sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:var(--mid)} a:hover{color:var(--navy)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:24px;padding-right:24px}
+h1,h2,h3{margin:0;letter-spacing:-.02em}
+.nav-band{background:var(--navy);color:#fff}
+nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:22px}
+.nav-logo{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none}
+.nav-logo span{font-weight:300;letter-spacing:.18em;font-size:16px}
+.nav-links{display:flex;flex-wrap:wrap;gap:4px 36px;font-size:15px}
+.nav-links a{color:#dbe9f1;text-decoration:none;padding:12px 0} .nav-links a:hover,.nav-links a.on{color:#fff}
+.nav-links a.on{border-bottom:2px solid var(--teal)}
+.hero{padding-top:56px;padding-bottom:88px;display:flex;flex-direction:column;gap:20px;max-width:760px}
+.hero-eyebrow{display:flex;align-items:center;gap:16px;font-size:12px;letter-spacing:.22em;color:var(--teal);font-weight:600}
+.hero-eyebrow::before{content:"";width:48px;height:2px;background:var(--teal)}
+.hero h1{font-size:clamp(35px,4.2vw,54px);line-height:1.08;font-weight:700;letter-spacing:-.03em}
+.hero h1 mark{background:none;color:var(--teal)}
+.hero p{margin:0;font-size:20px;line-height:1.65;color:var(--on-dark)}
+.items{padding-top:96px;padding-bottom:120px;display:flex;flex-direction:column;gap:24px}
+.item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);background:var(--bg-light);border-radius:var(--radius);overflow:hidden}
+.item-k{background:var(--navy);color:#fff;padding:40px 36px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:240px}
+.item-k.alt{background:var(--deep)}
+.tagrow{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);background:var(--teal);padding:5px 12px;border-radius:99px}
+.item-k .meta{font-size:14px;color:var(--on-dark);letter-spacing:.04em}
+.item-k img{height:32px;width:auto;align-self:flex-start;filter:brightness(0) invert(1);opacity:.9}
+.item-b{padding:40px 44px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.item-b h2{font-size:clamp(24px,2.6vw,32px);line-height:1.2;font-weight:600;color:var(--navy)}
+.item-b p{margin:0;font-size:17px;line-height:1.65;color:var(--ink-3)}
+.acts{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin-top:8px}
+.btn{white-space:nowrap;display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;background:var(--teal);color:var(--ink)}
+.btn:hover{color:var(--ink);opacity:.9}
+.tl{font-size:15px;font-weight:500;text-decoration:none}
+.tl:hover{text-decoration:underline}
+.nl form{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.nl input{flex:1 1 240px;font:inherit;font-size:15px;padding:13px 16px;border:1px solid #b9cdd9;border-radius:10px;background:#fff;color:var(--ink)}
+.nl button{font:inherit;font-weight:600;font-size:15px;padding:14px 24px;border:0;border-radius:10px;background:var(--navy);color:#fff;cursor:pointer}
+.arts{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.art{background:#fff;padding:32px 30px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;border-left:2px solid transparent;transition:border-color .2s}
+.art:hover{border-left-color:var(--teal)}
+.art small{font-size:12px;letter-spacing:.14em;font-weight:700;color:var(--mid)}
+.art h3{font-size:21px;font-weight:600;color:var(--navy);line-height:1.25}
+.art p{margin:0;font-size:15px;line-height:1.6;color:var(--ink-3)}
+.art span{font-size:15px;font-weight:500;color:var(--mid);margin-top:auto;padding-top:8px}
+footer{background:var(--deep);color:#a9c4d4;font-size:14px;padding:32px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px}
+footer .links{display:flex;flex-wrap:wrap;gap:8px 24px}
+footer a{color:#c9dce8;text-decoration:none} footer a:hover{color:#fff}
+@media(max-width:820px){.item{grid-template-columns:1fr}.item-k{min-height:0}.item-b{padding:32px 28px}}
+</style>
+</head>
+<body>
+<div class="nav-band"><div class="wrap">
+<nav>
+<a href="index.html" class="nav-logo" aria-label="Kaiser CX home">
+<svg height="34" viewBox="0 0 180 140" fill="none" aria-hidden="true"><line x1="18" y1="15" x2="18" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="18" y1="70" x2="48" y2="15" stroke="#5ecfdc" stroke-width="5" stroke-linecap="round"/><line x1="18" y1="70" x2="48" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="94" y1="15" x2="70" y2="32" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="70" y1="32" x2="70" y2="108" stroke="#5ecfdc" stroke-width="5" stroke-linecap="round"/><line x1="70" y1="108" x2="94" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="5" stroke-linecap="round"/></svg>
+<span>KAISER CX</span></a>
+<div class="nav-links">
+<a href="index.html#start">How we work</a>
+<a href="index.html#about">About us</a>
+<a href="insights.html" class="on">Insights</a>
+<a href="index.html#contact">Contact</a>
+</div>
+</nav>
+<section class="hero">
+<div class="hero-eyebrow">INSIGHTS</div>
+<h1>Read it. Download it. <mark>Use it.</mark></h1>
+<p>A real case, a full whitepaper and short articles from the field.</p>
+</section>
+</div></div>
+
+<main class="wrap items">
+
+<article class="item" id="case-study">
+<div class="item-k">
+<div class="tagrow"><span class="tag">Case study</span></div>
+<img src="logo_railflow.png" alt="Rail-Flow">
+<span class="meta">Presentation · PDF</span>
+</div>
+<div class="item-b">
+<h2>Rail-Flow: from scattered signals to one operating logic</h2>
+<p>How a growing CS team replaced manual account checks with signal-driven priorities in their existing CRM. Starting point, root cause, results and the logic behind it.</p>
+<div class="acts">
+<a class="btn" href="#" data-gate>Download case study ↓</a>
+<a class="tl" href="rail-flow-case-study.html">Read online →</a>
+</div>
+</div>
+</article>
+
+<article class="item" id="whitepaper">
+<div class="item-k alt">
+<div class="tagrow"><span class="tag">Whitepaper</span></div>
+<h3 style="font-size:28px;line-height:1.2;font-weight:600">From Signal to Action</h3>
+<span class="meta">Kaiser CX × Pollup AI</span>
+</div>
+<div class="item-b">
+<h2>Why churn is a timing problem — and what Agentic AI changes</h2>
+<p>A practical guide for CS leaders with growing portfolios and flat headcount: three concrete scenarios, CS platform vs. agentic automation, and where to start.</p>
+<div class="acts">
+<a class="btn" href="from-signal-to-action.html">Read the whitepaper →</a>
+</div>
+</div>
+</article>
+
+<article class="item nl" id="newsletter">
+<div class="item-k alt">
+<div class="tagrow"><span class="tag">Newsletter</span></div>
+<h3 style="font-size:28px;line-height:1.2;font-weight:600">Notes from the field</h3>
+<span class="meta">Short, practical, no fluff</span>
+</div>
+<div class="item-b">
+<h2>Get each issue in your inbox</h2>
+<p>Practical thinking on Customer Success, data and AI. Unsubscribe anytime.</p>
+<form id="nlf" action="https://formspree.io/f/xpqolplw" method="POST">
+<input type="hidden" name="_subject" value="Newsletter signup">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+<input type="email" name="email" placeholder="Work email" required aria-label="Email">
+<button type="submit">Subscribe</button>
+</form>
+<p id="nlm" style="font-size:14px;min-height:20px"></p>
+</div>
+</article>
+
+</main>
+
+<section class="wrap" id="articles" style="padding-bottom:120px">
+<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px;max-width:680px">
+<div style="font-size:12px;letter-spacing:.22em;font-weight:600;color:var(--mid);display:flex;align-items:center;gap:16px"><span style="width:40px;height:2px;background:var(--teal)"></span>ARTICLES</div>
+</div>
+<div class="arts">
+<a class="art" href="insight-article.html"><small>DATE · TOPIC</small><h3>Article title goes here</h3><p>Two-line teaser of the article. Replace with the first piece.</p><span>Read article →</span></a>
+</div>
+</section>
+
+<footer><div class="wrap">
+<span>© 2026 Kaiser CX Consulting · Berlin</span>
+<div class="links">
+<a href="mailto:christiane@kaiser-cx.com">christiane@kaiser-cx.com</a>
+<a href="impressum.html">Legal Notice</a>
+<a href="datenschutz.html">Privacy Policy</a>
+</div>
+</div></footer>
+<dialog id="dl" style="border:0;border-radius:16px;padding:0;max-width:440px;width:calc(100% - 32px);font-family:'Sora',sans-serif">
+<form id="dlf" method="dialog" style="padding:32px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px"><h3 style="margin:0;font-size:22px;font-weight:600;color:#0f3d5c;letter-spacing:-.02em">Get the Rail-Flow case study</h3><button type="button" id="dlx" aria-label="Close" style="border:0;background:none;font-size:24px;line-height:1;cursor:pointer;color:#4a6a7a">×</button></div>
+<p style="margin:0;font-size:15px;color:#4a6a7a;line-height:1.6">Three fields, then the download starts. No sales sequence.</p>
+<input name="name" placeholder="Name *" required style="font:inherit;font-size:15px;padding:13px 16px;border:1px solid #b9cdd9;border-radius:10px">
+<input name="company" placeholder="Company *" required style="font:inherit;font-size:15px;padding:13px 16px;border:1px solid #b9cdd9;border-radius:10px">
+<input name="email" type="email" placeholder="Work email *" required style="font:inherit;font-size:15px;padding:13px 16px;border:1px solid #b9cdd9;border-radius:10px">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+<button type="submit" style="font:inherit;font-weight:600;font-size:15px;padding:14px 24px;border:0;border-radius:10px;background:#5ecfdc;color:#0f1923;cursor:pointer">Download ↓</button>
+<p id="dlm" style="margin:0;font-size:13px;color:#4a6a7a;min-height:18px"></p>
+</form></dialog>
+<script>
+(function(){var d=document.getElementById('dl'),f=document.getElementById('dlf'),m=document.getElementById('dlm');
+document.querySelectorAll('[data-gate]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();d.showModal()})});
+document.getElementById('dlx').onclick=function(){d.close()};
+f.addEventListener('submit',function(e){e.preventDefault();m.textContent='…';var fd=new FormData(f);fd.append('_subject','Case study download: Rail-Flow');
+fetch('https://formspree.io/f/xpqolplw',{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(function(r){
+if(!r.ok)throw 0;var a=document.createElement('a');a.href='Rail-Flow-Case-Study.pdf';a.download='';document.body.appendChild(a);a.click();a.remove();m.textContent='Thank you. Your download has started.';f.reset();setTimeout(function(){d.close();m.textContent=''},2200)}).catch(function(){m.textContent='Something went wrong. Please email christiane@kaiser-cx.com.'})})})();
+</script>
+<script>
+document.getElementById('nlf').addEventListener('submit',function(e){e.preventDefault();var f=this,m=document.getElementById('nlm');
+fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(r){if(!r.ok)throw 0;m.textContent='Thank you. You are on the list.';f.reset()}).catch(function(){m.textContent='Something went wrong. Please email christiane@kaiser-cx.com.'})});
+</script>
+</body>
+</html>

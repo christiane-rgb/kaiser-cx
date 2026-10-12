@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rail-Flow Case Study — From reactive to scalable | Kaiser CX</title>
+<meta name="description" content="How Rail-Flow built the foundation for proactive renewals, risk management and AI-assisted Customer Success in 16 weeks, without another platform.">
+<link rel="canonical" href="https://kaiser-cx.com/rail-flow-case-study.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{--navy:#0f3d5c;--navy-2:#164a6d;--deep:#071f30;--mid:#1e6a9a;--teal:#5ecfdc;--bg-light:#e8f4f8;--ink:#0f1923;--ink-2:#4a6a7a;--ink-3:#24485e;--line:#dfe8ee;--on-dark:#c9dce8;--radius:16px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Sora',sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:var(--mid)} a:hover{color:var(--navy)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:24px;padding-right:24px}
+h1,h2,h3{margin:0;letter-spacing:-.02em}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.22em;font-weight:600;color:var(--mid);text-transform:uppercase;display:flex;align-items:center;gap:16px}
+.eyebrow::before{content:"";width:40px;height:2px;background:var(--teal)}
+.dark .eyebrow{color:var(--teal)}
+h2{font-size:clamp(30px,3.4vw,44px);line-height:1.12;font-weight:600;color:var(--navy);text-wrap:balance}
+.sec{padding-top:112px;padding-bottom:112px}
+.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:48px;max-width:760px}
+.lead{font-size:19px;line-height:1.7;color:var(--ink-3)}
+.btn{white-space:nowrap;display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;background:var(--teal);color:var(--ink)}
+.btn:hover{color:var(--ink);opacity:.9}
+.btn.ghost{background:none;color:#fff;border:1.5px solid #6f97b2;padding:12.5px 24px;font-weight:500}.btn.ghost:hover{color:#fff;border-color:#fff}
+/* nav */
+.nav-band{background:var(--navy);color:#fff}
+nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:22px}
+.nav-logo{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none}
+.nav-logo span{font-weight:300;letter-spacing:.18em;font-size:16px}
+.nav-links{display:flex;flex-wrap:wrap;gap:4px 36px;font-size:15px}
+.nav-links a{color:#dbe9f1;text-decoration:none;padding:12px 0}.nav-links a:hover{color:#fff}
+.nav-links a.on{color:#fff;border-bottom:2px solid var(--teal)}
+/* hero */
+.hero{display:flex;flex-wrap:wrap;gap:56px;align-items:center;padding-top:56px;padding-bottom:96px}
+.hero-copy{flex:1 1 480px;display:flex;flex-direction:column;gap:26px}
+.crumb{font-size:13px;color:#a9c4d4}.crumb a{color:#dbe9f1;text-decoration:none}.crumb a:hover{color:var(--teal)}
+.hero h1{font-size:clamp(38px,4.8vw,62px);line-height:1.05;font-weight:700;letter-spacing:-.03em}
+.hero h1 mark{background:none;color:var(--teal)}
+.hero-sub{font-size:20px;line-height:1.65;color:var(--on-dark);max-width:560px}
+.hero-meta{display:grid;grid-template-columns:repeat(3,auto);gap:12px 36px;justify-content:start;padding-top:24px;border-top:1px solid rgba(255,255,255,.18)}
+.hero-meta small{display:block;font-size:11px;letter-spacing:.14em;color:var(--teal);font-weight:600}
+.hero-meta b{font-size:15px;font-weight:500}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.hero-card{flex:1 1 380px;background:#fff;color:var(--ink);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:16px;box-shadow:0 30px 60px rgba(4,20,32,.35)}
+.hc-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.hc-top b{font-size:15px}
+.risk{font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 11px;border-radius:99px;background:#fdecec;color:#b42318}
+.hc-k{font-size:11px;letter-spacing:.14em;font-weight:600;color:var(--ink-2)}
+.hc-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:15px;color:var(--ink-3)}
+.hc-list li{display:flex;gap:10px}.hc-list li::before{content:"↳";color:var(--mid);font-weight:600}
+.hc-rec{background:var(--bg-light);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:600;color:var(--navy)}
+.hc-rec small{display:block;font-size:11px;letter-spacing:.14em;color:var(--mid);margin-bottom:4px}
+/* trigger */
+.trig{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.stat{background:var(--bg-light);padding:32px 20px;text-align:center}
+.stat b{display:block;font-size:44px;font-weight:700;color:var(--navy);letter-spacing:-.03em;line-height:1}
+.stat span{font-size:14px;color:var(--ink-2)}
+.pull{margin-top:28px;font-size:20px;font-weight:600;line-height:1.45;color:var(--navy);border-left:3px solid var(--teal);padding-left:22px}
+/* before after */
+.ba{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.ba-r{display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);background:#fff;align-items:center}
+.ba-r>div{padding:22px 28px;font-size:17px}
+.ba-r .a{color:var(--navy);font-weight:600}
+.ba-r .b{color:var(--ink-2)}
+.ba-r .ar{text-align:center;color:var(--mid);font-size:22px;padding:0}
+.ba-h{background:var(--navy)}.ba-h>div{padding:14px 28px;font-size:12px;letter-spacing:.16em;font-weight:700;color:var(--teal)}
+/* phases */
+.dark{background:var(--deep);color:#fff}
+.dark h2{color:#fff}.dark .lead{color:var(--on-dark)}
+.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.ph{background:var(--navy);border:1px solid rgba(94,207,220,.18);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s}
+.ph:hover{border-color:var(--teal)}
+.ph-w{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);background:var(--teal);padding:5px 12px;border-radius:99px}
+.ph small{font-size:12px;letter-spacing:.14em;color:var(--teal);font-weight:600}
+.ph h3{font-size:22px;font-weight:600;margin-top:-6px}
+.ph ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--on-dark)}
+.ph li::before{content:"— ";color:var(--teal)}
+/* layers */
+.layers{display:flex;flex-direction:column;gap:12px}
+.ly{display:grid;grid-template-columns:72px minmax(0,1fr);gap:24px;align-items:center;border-radius:var(--radius);padding:28px 32px}
+.ly b.n{font-size:36px;font-weight:700;letter-spacing:-.02em}
+.ly h3{font-size:14px;letter-spacing:.14em;font-weight:700;margin-bottom:6px}
+.ly p{font-size:17px;line-height:1.6}
+.ly.l3{background:var(--navy);color:#fff}.l3 h3,.l3 b.n{color:var(--teal)}.l3 p{color:var(--on-dark)}
+.ly.l2{background:var(--bg-light);color:var(--ink-3)}.l2 h3,.l2 b.n{color:var(--mid)}
+.ly.l1{border:1.5px solid var(--navy);color:var(--ink-3)}.l1 h3,.l1 b.n{color:var(--navy)}
+/* foundation / cards */
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.card{background:#fff;padding:34px 30px;display:flex;flex-direction:column;gap:10px}
+.card small{font-size:12px;letter-spacing:.14em;font-weight:700;color:var(--mid)}
+.card h3{font-size:22px;font-weight:600;color:var(--navy);line-height:1.25}
+.card p{font-size:16px;line-height:1.65;color:var(--ink-3)}
+.card .n{font-size:13px;font-weight:700;color:var(--mid);letter-spacing:.06em}
+.cards6{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards6 .card{background:var(--bg-light)}
+.light-bg{background:var(--bg-light)}
+.light-bg .cards3{background:#fff}
+.light-bg .card{background:#fff}
+/* rca */
+.rca{display:flex;flex-wrap:wrap;gap:0;align-items:stretch}
+.rc{flex:1 1 220px;background:var(--navy);border:1px solid rgba(94,207,220,.18);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:10px}
+.rc.hl{background:var(--mid)}
+.rc small{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--teal)}.rc.hl small{color:#fff}
+.rc li{font-size:17px;color:#fff}
+.rc ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.rc p{font-size:19px;font-weight:600;line-height:1.4}
+.rc-ar{flex:0 0 48px;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:28px}
+.note{margin-top:32px;font-size:18px;color:var(--on-dark);border-left:3px solid var(--teal);padding-left:22px;max-width:720px;line-height:1.6}
+/* logic */
+.chain{display:flex;flex-wrap:wrap;gap:0;align-items:stretch}
+.step{flex:1 1 140px;background:var(--bg-light);border-radius:12px;padding:22px 18px;display:flex;flex-direction:column;gap:8px;font-weight:600;color:var(--navy);font-size:18px}
+.step small{font-size:12px;color:var(--mid);letter-spacing:.1em}
+.step:last-child{background:var(--navy);color:#fff}.step:last-child small{color:var(--teal)}
+.chain .ar{flex:0 0 36px;display:flex;align-items:center;justify-content:center;color:var(--mid);font-size:22px}
+/* cta */
+.cta{background:linear-gradient(118deg,#082c40 0%,#0f4c6c 47%,#1c7c8f 100%);color:#fff;text-align:center}
+.cta .wrap{display:flex;flex-direction:column;align-items:center;gap:22px;padding-top:112px;padding-bottom:112px}
+.cta h2{color:#fff;max-width:780px}.cta h2 span{color:var(--teal)}
+.cta .lead{color:var(--on-dark);max-width:620px}
+.cta .tagline{font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:600}
+footer{background:var(--deep);color:#a9c4d4;font-size:14px;padding:32px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px}
+footer .links{display:flex;flex-wrap:wrap;gap:8px 24px}
+footer a{color:#c9dce8;text-decoration:none}footer a:hover{color:#fff}
+@media(max-width:960px){.phases{grid-template-columns:repeat(2,minmax(0,1fr))}.trig{grid-template-columns:1fr;gap:40px}.cards3,.cards6{grid-template-columns:1fr}.rc-ar,.chain .ar{flex-basis:100%;height:32px;font-size:0}.rc-ar::after,.chain .ar::after{content:"↓";font-size:24px}}
+@media(max-width:640px){.phases{grid-template-columns:1fr}.hero-meta{grid-template-columns:1fr}.ba-r{grid-template-columns:1fr}.ba-r .ar{transform:rotate(90deg);padding:0}.ba-h{display:none}.ba-r>div{padding:14px 22px}.ly{grid-template-columns:1fr;gap:8px}.sec{padding-top:72px;padding-bottom:72px}}
+</style>
+</head>
+<body>
+
+<div class="nav-band dark" style="background:var(--navy)"><div class="wrap">
+<nav>
+<a href="index.html" class="nav-logo" aria-label="Kaiser CX home">
+<svg height="34" viewBox="0 0 180 140" fill="none" aria-hidden="true"><line x1="18" y1="15" x2="18" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="18" y1="70" x2="48" y2="15" stroke="#5ecfdc" stroke-width="5" stroke-linecap="round"/><line x1="18" y1="70" x2="48" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="94" y1="15" x2="70" y2="32" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="70" y1="32" x2="70" y2="108" stroke="#5ecfdc" stroke-width="5" stroke-linecap="round"/><line x1="70" y1="108" x2="94" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="5" stroke-linecap="round"/></svg>
+<span>KAISER CX</span></a>
+<div class="nav-links">
+<a href="index.html#start">How we work</a>
+<a href="index.html#about">About us</a>
+<a href="insights.html" class="on">Insights</a>
+<a href="index.html#contact">Contact</a>
+</div>
+</nav>
+<section class="hero">
+<div class="hero-copy">
+<div class="crumb"><a href="insights.html">Insights</a> &nbsp;›&nbsp; Case study</div>
+<div class="eyebrow">Case study · Rail-Flow</div>
+<h1>From reactive <mark>to scalable.</mark></h1>
+<p class="hero-sub">How Rail-Flow built the foundation for proactive renewals, risk management and AI-assisted Customer Success — without another platform.</p>
+<div class="hero-meta">
+<div><small>CLIENT</small><b>Rail-Flow GmbH</b></div>
+<div><small>ENGAGEMENT</small><b>CS Foundation · 16 weeks</b></div>
+<div><small>DELIVERED BY</small><b>Kaiser CX × Pollup AI</b></div>
+</div>
+<div class="acts"><a class="btn" href="#" data-gate>Download as PDF ↓</a><a class="btn ghost" href="https://calendly.com/christiane-kaiser-cx/ai-for-cs">Book a call</a></div>
+</div>
+<div class="hero-card">
+<div class="hc-top"><b>Account A · Renewal in 62 days</b><span class="risk">AT RISK</span></div>
+<div class="hc-k">WHY — FROM TICKETS, USAGE AND CONTACTS</div>
+<ul class="hc-list">
+<li>Login problems: 4 tickets from 3 users in 3 weeks</li>
+<li>Document uploads not working since the last release</li>
+<li>Usage down for 6 weeks, no sponsor contact</li>
+</ul>
+<div class="hc-rec"><small>RECOMMENDED</small>Executive outreach before the renewal call →</div>
+</div>
+</section>
+</div></div>
+
+<section class="sec wrap">
+<div class="trig">
+<div class="sec-head" style="margin:0">
+<div class="eyebrow">The trigger</div>
+<h2>Growth exposed a visibility problem.</h2>
+<p class="lead">Customer management was spread across Sales, Implementation and Tech Support. Data lived in a spreadsheet; HubSpot was used for Sales. No renewal process, no reliable health view, no way to prioritise attention.</p>
+</div>
+<div>
+<div class="stats">
+<div class="stat"><b>~100</b><span>customers</span></div>
+<div class="stat"><b>1</b><span>spreadsheet</span></div>
+<div class="stat"><b>0</b><span>CS function</span></div>
+</div>
+<p class="pull">Customer risk was often visible only after the customer was already lost.</p>
+</div>
+</div>
+</section>
+
+<section class="light-bg"><div class="sec wrap">
+<div class="sec-head"><div class="eyebrow">Before → After</div><h2>What the operating model replaced.</h2></div>
+<div class="ba">
+<div class="ba-r ba-h"><div>BEFORE</div><div></div><div>AFTER</div></div>
+<div class="ba-r"><div class="b">Customer data in one spreadsheet</div><div class="ar">→</div><div class="a">Structured CS data in HubSpot</div></div>
+<div class="ba-r"><div class="b">No renewal process</div><div class="ar">→</div><div class="a">Renewal pipeline with automations for CSMs</div></div>
+<div class="ba-r"><div class="b">No health assessment or segmentation</div><div class="ar">→</div><div class="a">Health status (Green/Yellow/Red) + segmentation by potential</div></div>
+<div class="ba-r"><div class="b">Reactive customer management</div><div class="ar">→</div><div class="a">Proactive, prioritised customer management</div></div>
+<div class="ba-r"><div class="b">Manual investigation of risk</div><div class="ar">→</div><div class="a">AI-assisted root cause analysis</div></div>
+</div>
+</div></section>
+
+<section class="dark"><div class="sec wrap">
+<div class="sec-head"><div class="eyebrow">The approach</div><h2>Four phases. Sixteen weeks.</h2></div>
+<div class="phases">
+<div class="ph"><span class="ph-w">Wk 1–3</span><small>PHASE 1</small><h3>Discovery</h3><ul><li>Stakeholder interviews</li><li>Process &amp; data analysis</li><li>Project scoping</li></ul></div>
+<div class="ph"><span class="ph-w">Wk 4–8</span><small>PHASE 2</small><h3>Structure &amp; Build</h3><ul><li>CS processes</li><li>HubSpot data foundation</li><li>Playbooks &amp; templates</li></ul></div>
+<div class="ph"><span class="ph-w">Wk 9–14</span><small>PHASE 3</small><h3>Integration &amp; Validation</h3><ul><li>AI signal layer (VoC Hub)</li><li>CS KPI introduction</li><li>CS operating standards</li></ul></div>
+<div class="ph"><span class="ph-w">Wk 15–16</span><small>PHASE 4</small><h3>Handover</h3><ul><li>Workshops</li><li>Final presentation</li><li>Sign-off</li></ul></div>
+</div>
+</div></section>
+
+<section class="sec wrap">
+<div class="sec-head"><div class="eyebrow">What we changed</div><h2>We built the CS operating layer into HubSpot.</h2><p class="lead">No new platform. Three layers on the stack Rail-Flow already owned.</p></div>
+<div class="layers">
+<div class="ly l1"><b class="n">01</b><div><h3>CRM &amp; DATA FOUNDATION</h3><p>Structured customer data model, renewal pipeline with stage automation, and segmentation by potential.</p></div></div>
+<div class="ly l2"><b class="n">02</b><div><h3>ACCOUNT OVERVIEW</h3><p>All accounts at a glance — journey stage, health, latest notes, revenue and renewal date. Filterable by segment, risk or owner.</p></div></div>
+<div class="ly l3"><b class="n">03</b><div><h3>AI-ASSISTED INTELLIGENCE</h3><p>VoC Hub explains what's happening, why, and what to look into next — pulling signals from HubSpot, Jira and usage data.</p></div></div>
+</div>
+</section>
+
+<section class="light-bg"><div class="sec wrap">
+<div class="sec-head"><div class="eyebrow">The foundation</div><h2>AI needs a foundation. We built it first.</h2></div>
+<div class="cards3">
+<div class="card"><small>FOCUS</small><h3>Decide where attention goes.</h3><p>Segmentation by potential, health score, adoption and renewal stage — priorities follow evidence, not the loudest account.</p></div>
+<div class="card"><small>OWNERSHIP</small><h3>Decide who owns what, and when.</h3><p>Roles across the lifecycle, clear handovers, a weekly operating rhythm, shared knowledge — quality no longer depends on one person.</p></div>
+<div class="card"><small>DATA &amp; TOOLS</small><h3>Make the data trustworthy.</h3><p>CRM standards, data quality rules and integrations of HubSpot, Jira and usage data — what the AI layer reads from.</p></div>
+</div>
+</div></section>
+
+<section class="dark"><div class="sec wrap">
+<div class="sec-head"><div class="eyebrow">Root cause analysis</div><h2>From “Something is wrong” to “This may be why.”</h2></div>
+<div class="rca">
+<div class="rc"><small>SIGNALS CHANGE TOGETHER</small><ul><li>Usage drops</li><li>Support issues rise</li><li>Communication drops</li></ul></div>
+<div class="rc-ar">→</div>
+<div class="rc"><small>AI CONNECTS</small><p>Tickets, bugs, usage and communication</p></div>
+<div class="rc-ar">→</div>
+<div class="rc hl"><small>CONTEXT FOR THE CSM</small><p>A structured explanation — not another score.</p></div>
+</div>
+<p class="note">The CSM stays in control. AI provides context and recommendations — the team decides.</p>
+</div></section>
+
+<section class="sec wrap">
+<div class="sec-head"><div class="eyebrow">The result</div><h2>Six concrete outcomes from one foundation.</h2></div>
+<div class="cards3 cards6">
+<div class="card"><span class="n">01</span><h3>Accurate forecasting</h3><p>Renewal ARR and probability tracked per deal — forecasts built on data, not spreadsheet estimates.</p></div>
+<div class="card"><span class="n">02</span><h3>Early churn-risk visibility</h3><p>Risk surfaces before renewal — with the reason behind it.</p></div>
+<div class="card"><span class="n">03</span><h3>Early expansion visibility</h3><p>Growth signals become visible early — evidence, not intuition alone.</p></div>
+<div class="card"><span class="n">04</span><h3>Focused customer management</h3><p>CSMs know which accounts need attention — and why.</p></div>
+<div class="card"><span class="n">05</span><h3>Resource allocation</h3><p>Segments set the contact frequency — capacity goes where it matters.</p></div>
+<div class="card"><span class="n">06</span><h3>Product transparency</h3><p>Product teams see where customers get stuck and which processes are disrupted.</p></div>
+</div>
+</section>
+
+<section class="light-bg"><div class="sec wrap">
+<div class="sec-head"><div class="eyebrow">How it reaches the team</div><h2>Not just flags. The context behind them.</h2></div>
+<div class="cards3">
+<div class="card"><span class="n">01</span><h3>Your Week</h3><p>Per CSM, their accounts only. Every critical account comes with a plain-language explanation of what is going wrong — and why it matters.</p></div>
+<div class="card"><span class="n">02</span><h3>Friday CS Wrap-Up</h3><p>What changed since last week — renewals, churns, health shifts — each with the reason behind it, not just a red or green flag.</p></div>
+<div class="card"><span class="n">03</span><h3>VoC Hub, on every deal</h3><p>Risk and expansion patterns, plus the agent's reasoning: which evidence from tickets, meetings, emails and usage led to the score.</p></div>
+<div class="card"><span class="n">04</span><h3>Monthly: Product Theme Report</h3><p>Where customers hit the product: which workflows break, which business processes get disrupted — with the affected accounts and open questions.</p></div>
+<div class="card"><span class="n">05</span><h3>EBR deck, every 6 months</h3><p>Prefilled with insights from support and sent to the CSM — the review starts from facts, not a blank slide.</p></div>
+<div class="card"><span class="n">06</span><h3>Early Adoption Monitor</h3><p>Tracks adoption after go-live — weak uptake shows up early, not at renewal.</p></div>
+</div>
+</div></section>
+
+<section class="sec wrap">
+<div class="sec-head"><div class="eyebrow">The operating logic</div><h2>From customer data to action.</h2></div>
+<div class="chain">
+<div class="step"><small>1</small>Customer data</div><div class="ar">→</div>
+<div class="step"><small>2</small>Signals</div><div class="ar">→</div>
+<div class="step"><small>3</small>Root cause</div><div class="ar">→</div>
+<div class="step"><small>4</small>CSM decision</div><div class="ar">→</div>
+<div class="step"><small>5</small>Action</div>
+</div>
+<p class="pull" style="max-width:760px">The system doesn’t replace the CSM. It shortens the distance between something happening in the customer base and the team knowing what to do.</p>
+</section>
+
+<section class="cta"><div class="wrap">
+<span class="tagline">The principle behind the work</span>
+<h2>Your CS team doesn’t need another platform. <span>It needs a layer of logic.</span></h2>
+<p class="lead">A layer that makes the systems you already own work together. Customer Success, engineered.</p>
+<div class="acts" style="justify-content:center"><a class="btn" href="https://calendly.com/christiane-kaiser-cx/ai-for-cs">Let’s talk →</a><a class="btn ghost" href="#" data-gate>Download as PDF ↓</a></div>
+</div></section>
+
+<footer><div class="wrap">
+<span>© 2026 Kaiser CX Consulting · Berlin</span>
+<div class="links">
+<a href="mailto:christiane@kaiser-cx.com">christiane@kaiser-cx.com</a>
+<a href="impressum.html">Legal Notice</a>
+<a href="datenschutz.html">Privacy Policy</a>
+</div>
+</div></footer>
+<dialog id="dl" style="border:0;border-radius:16px;padding:0;max-width:440px;width:calc(100% - 32px);font-family:'Sora',sans-serif">
+<form id="dlf" method="dialog" style="padding:32px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px"><h3 style="margin:0;font-size:22px;font-weight:600;color:#0f3d5c;letter-spacing:-.02em">Get the Rail-Flow case study</h3><button type="button" id="dlx" aria-label="Close" style="border:0;background:none;font-size:24px;line-height:1;cursor:pointer;color:#4a6a7a">×</button></div>
+<p style="margin:0;font-size:15px;color:#4a6a7a;line-height:1.6">Three fields, then the download starts. No sales sequence.</p>
+<input name="name" placeholder="Name *" required style="font:inherit;font-size:15px;padding:13px 16px;border:1px solid #b9cdd9;border-radius:10px">
+<input name="company" placeholder="Company *" required style="font:inherit;font-size:15px;padding:13px 16px;border:1px solid #b9cdd9;border-radius:10px">
+<input name="email" type="email" placeholder="Work email *" required style="font:inherit;font-size:15px;padding:13px 16px;border:1px solid #b9cdd9;border-radius:10px">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+<button type="submit" style="font:inherit;font-weight:600;font-size:15px;padding:14px 24px;border:0;border-radius:10px;background:#5ecfdc;color:#0f1923;cursor:pointer">Download ↓</button>
+<p id="dlm" style="margin:0;font-size:13px;color:#4a6a7a;min-height:18px"></p>
+</form></dialog>
+<script>
+(function(){var d=document.getElementById('dl'),f=document.getElementById('dlf'),m=document.getElementById('dlm');
+document.querySelectorAll('[data-gate]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();d.showModal()})});
+document.getElementById('dlx').onclick=function(){d.close()};
+f.addEventListener('submit',function(e){e.preventDefault();m.textContent='…';var fd=new FormData(f);fd.append('_subject','Case study download: Rail-Flow');
+fetch('https://formspree.io/f/xpqolplw',{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(function(r){
+if(!r.ok)throw 0;var a=document.createElement('a');a.href='Rail-Flow-Case-Study.pdf';a.download='';document.body.appendChild(a);a.click();a.remove();m.textContent='Thank you. Your download has started.';f.reset();setTimeout(function(){d.close();m.textContent=''},2200)}).catch(function(){m.textContent='Something went wrong. Please email christiane@kaiser-cx.com.'})})})();
+</script>
+</body>
+</html>

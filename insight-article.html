@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Article title — Kaiser CX</title>
+<meta name="description" content="How Rail-Flow built the foundation for proactive renewals, risk management and AI-assisted Customer Success in 16 weeks, without another platform.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{--navy:#0f3d5c;--navy-2:#164a6d;--deep:#071f30;--mid:#1e6a9a;--teal:#5ecfdc;--bg-light:#e8f4f8;--ink:#0f1923;--ink-2:#4a6a7a;--ink-3:#24485e;--line:#dfe8ee;--on-dark:#c9dce8;--radius:16px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Sora',sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:var(--mid)} a:hover{color:var(--navy)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:24px;padding-right:24px}
+h1,h2,h3{margin:0;letter-spacing:-.02em}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.22em;font-weight:600;color:var(--mid);text-transform:uppercase;display:flex;align-items:center;gap:16px}
+.eyebrow::before{content:"";width:40px;height:2px;background:var(--teal)}
+.dark .eyebrow{color:var(--teal)}
+h2{font-size:clamp(30px,3.4vw,44px);line-height:1.12;font-weight:600;color:var(--navy);text-wrap:balance}
+.sec{padding-top:112px;padding-bottom:112px}
+.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:48px;max-width:760px}
+.lead{font-size:19px;line-height:1.7;color:var(--ink-3)}
+.btn{white-space:nowrap;display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;background:var(--teal);color:var(--ink)}
+.btn:hover{color:var(--ink);opacity:.9}
+.btn.ghost{background:none;color:#fff;border:1.5px solid #6f97b2;padding:12.5px 24px;font-weight:500}.btn.ghost:hover{color:#fff;border-color:#fff}
+/* nav */
+.nav-band{background:var(--navy);color:#fff}
+nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:22px}
+.nav-logo{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none}
+.nav-logo span{font-weight:300;letter-spacing:.18em;font-size:16px}
+.nav-links{display:flex;flex-wrap:wrap;gap:4px 36px;font-size:15px}
+.nav-links a{color:#dbe9f1;text-decoration:none;padding:12px 0}.nav-links a:hover{color:#fff}
+.nav-links a.on{color:#fff;border-bottom:2px solid var(--teal)}
+/* hero */
+.hero{display:flex;flex-wrap:wrap;gap:56px;align-items:center;padding-top:56px;padding-bottom:96px}
+.hero-copy{flex:1 1 480px;display:flex;flex-direction:column;gap:26px}
+.crumb{font-size:13px;color:#a9c4d4}.crumb a{color:#dbe9f1;text-decoration:none}.crumb a:hover{color:var(--teal)}
+.hero h1{font-size:clamp(38px,4.8vw,62px);line-height:1.05;font-weight:700;letter-spacing:-.03em}
+.hero h1 mark{background:none;color:var(--teal)}
+.hero-sub{font-size:20px;line-height:1.65;color:var(--on-dark);max-width:560px}
+.hero-meta{display:grid;grid-template-columns:repeat(3,auto);gap:12px 36px;justify-content:start;padding-top:24px;border-top:1px solid rgba(255,255,255,.18)}
+.hero-meta small{display:block;font-size:11px;letter-spacing:.14em;color:var(--teal);font-weight:600}
+.hero-meta b{font-size:15px;font-weight:500}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.hero-card{flex:1 1 380px;background:#fff;color:var(--ink);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:16px;box-shadow:0 30px 60px rgba(4,20,32,.35)}
+.hc-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.hc-top b{font-size:15px}
+.risk{font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 11px;border-radius:99px;background:#fdecec;color:#b42318}
+.hc-k{font-size:11px;letter-spacing:.14em;font-weight:600;color:var(--ink-2)}
+.hc-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:15px;color:var(--ink-3)}
+.hc-list li{display:flex;gap:10px}.hc-list li::before{content:"↳";color:var(--mid);font-weight:600}
+.hc-rec{background:var(--bg-light);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:600;color:var(--navy)}
+.hc-rec small{display:block;font-size:11px;letter-spacing:.14em;color:var(--mid);margin-bottom:4px}
+/* trigger */
+.trig{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.stat{background:var(--bg-light);padding:32px 20px;text-align:center}
+.stat b{display:block;font-size:44px;font-weight:700;color:var(--navy);letter-spacing:-.03em;line-height:1}
+.stat span{font-size:14px;color:var(--ink-2)}
+.pull{margin-top:28px;font-size:20px;font-weight:600;line-height:1.45;color:var(--navy);border-left:3px solid var(--teal);padding-left:22px}
+/* before after */
+.ba{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.ba-r{display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);background:#fff;align-items:center}
+.ba-r>div{padding:22px 28px;font-size:17px}
+.ba-r .a{color:var(--navy);font-weight:600}
+.ba-r .b{color:var(--ink-2)}
+.ba-r .ar{text-align:center;color:var(--mid);font-size:22px;padding:0}
+.ba-h{background:var(--navy)}.ba-h>div{padding:14px 28px;font-size:12px;letter-spacing:.16em;font-weight:700;color:var(--teal)}
+/* phases */
+.dark{background:var(--deep);color:#fff}
+.dark h2{color:#fff}.dark .lead{color:var(--on-dark)}
+.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.ph{background:var(--navy);border:1px solid rgba(94,207,220,.18);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s}
+.ph:hover{border-color:var(--teal)}
+.ph-w{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);background:var(--teal);padding:5px 12px;border-radius:99px}
+.ph small{font-size:12px;letter-spacing:.14em;color:var(--teal);font-weight:600}
+.ph h3{font-size:22px;font-weight:600;margin-top:-6px}
+.ph ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--on-dark)}
+.ph li::before{content:"— ";color:var(--teal)}
+/* layers */
+.layers{display:flex;flex-direction:column;gap:12px}
+.ly{display:grid;grid-template-columns:72px minmax(0,1fr);gap:24px;align-items:center;border-radius:var(--radius);padding:28px 32px}
+.ly b.n{font-size:36px;font-weight:700;letter-spacing:-.02em}
+.ly h3{font-size:14px;letter-spacing:.14em;font-weight:700;margin-bottom:6px}
+.ly p{font-size:17px;line-height:1.6}
+.ly.l3{background:var(--navy);color:#fff}.l3 h3,.l3 b.n{color:var(--teal)}.l3 p{color:var(--on-dark)}
+.ly.l2{background:var(--bg-light);color:var(--ink-3)}.l2 h3,.l2 b.n{color:var(--mid)}
+.ly.l1{border:1.5px solid var(--navy);color:var(--ink-3)}.l1 h3,.l1 b.n{color:var(--navy)}
+/* foundation / cards */
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.card{background:#fff;padding:34px 30px;display:flex;flex-direction:column;gap:10px}
+.card small{font-size:12px;letter-spacing:.14em;font-weight:700;color:var(--mid)}
+.card h3{font-size:22px;font-weight:600;color:var(--navy);line-height:1.25}
+.card p{font-size:16px;line-height:1.65;color:var(--ink-3)}
+.card .n{font-size:13px;font-weight:700;color:var(--mid);letter-spacing:.06em}
+.cards6{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards6 .card{background:var(--bg-light)}
+.light-bg{background:var(--bg-light)}
+.light-bg .cards3{background:#fff}
+.light-bg .card{background:#fff}
+/* rca */
+.rca{display:flex;flex-wrap:wrap;gap:0;align-items:stretch}
+.rc{flex:1 1 220px;background:var(--navy);border:1px solid rgba(94,207,220,.18);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:10px}
+.rc.hl{background:var(--mid)}
+.rc small{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--teal)}.rc.hl small{color:#fff}
+.rc li{font-size:17px;color:#fff}
+.rc ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.rc p{font-size:19px;font-weight:600;line-height:1.4}
+.rc-ar{flex:0 0 48px;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:28px}
+.note{margin-top:32px;font-size:18px;color:var(--on-dark);border-left:3px solid var(--teal);padding-left:22px;max-width:720px;line-height:1.6}
+/* logic */
+.chain{display:flex;flex-wrap:wrap;gap:0;align-items:stretch}
+.step{flex:1 1 140px;background:var(--bg-light);border-radius:12px;padding:22px 18px;display:flex;flex-direction:column;gap:8px;font-weight:600;color:var(--navy);font-size:18px}
+.step small{font-size:12px;color:var(--mid);letter-spacing:.1em}
+.step:last-child{background:var(--navy);color:#fff}.step:last-child small{color:var(--teal)}
+.chain .ar{flex:0 0 36px;display:flex;align-items:center;justify-content:center;color:var(--mid);font-size:22px}
+/* cta */
+.cta{background:linear-gradient(118deg,#082c40 0%,#0f4c6c 47%,#1c7c8f 100%);color:#fff;text-align:center}
+.cta .wrap{display:flex;flex-direction:column;align-items:center;gap:22px;padding-top:112px;padding-bottom:112px}
+.cta h2{color:#fff;max-width:780px}.cta h2 span{color:var(--teal)}
+.cta .lead{color:var(--on-dark);max-width:620px}
+.cta .tagline{font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:600}
+footer{background:var(--deep);color:#a9c4d4;font-size:14px;padding:32px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px}
+footer .links{display:flex;flex-wrap:wrap;gap:8px 24px}
+footer a{color:#c9dce8;text-decoration:none}footer a:hover{color:#fff}
+@media(max-width:960px){.phases{grid-template-columns:repeat(2,minmax(0,1fr))}.trig{grid-template-columns:1fr;gap:40px}.cards3,.cards6{grid-template-columns:1fr}.rc-ar,.chain .ar{flex-basis:100%;height:32px;font-size:0}.rc-ar::after,.chain .ar::after{content:"↓";font-size:24px}}
+@media(max-width:640px){.phases{grid-template-columns:1fr}.hero-meta{grid-template-columns:1fr}.ba-r{grid-template-columns:1fr}.ba-r .ar{transform:rotate(90deg);padding:0}.ba-h{display:none}.ba-r>div{padding:14px 22px}.ly{grid-template-columns:1fr;gap:8px}.sec{padding-top:72px;padding-bottom:72px}}
+</style>
+</head>
+<body>
+
+<div class="nav-band dark" style="background:var(--navy)"><div class="wrap">
+<nav>
+<a href="index.html" class="nav-logo" aria-label="Kaiser CX home">
+<svg height="34" viewBox="0 0 180 140" fill="none" aria-hidden="true"><line x1="18" y1="15" x2="18" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="18" y1="70" x2="48" y2="15" stroke="#5ecfdc" stroke-width="5" stroke-linecap="round"/><line x1="18" y1="70" x2="48" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="94" y1="15" x2="70" y2="32" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="70" y1="32" x2="70" y2="108" stroke="#5ecfdc" stroke-width="5" stroke-linecap="round"/><line x1="70" y1="108" x2="94" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="108" y1="15" x2="162" y2="125" stroke="white" stroke-width="5" stroke-linecap="round"/><line x1="162" y1="15" x2="108" y2="125" stroke="#5ecfdc" stroke-width="5" stroke-linecap="round"/></svg>
+<span>KAISER CX</span></a>
+<div class="nav-links">
+<a href="index.html#start">How we work</a>
+<a href="index.html#about">About us</a>
+<a href="insights.html" class="on">Insights</a>
+<a href="index.html#contact">Contact</a>
+</div>
+</nav>
+<section class="hero" style="padding-bottom:72px"><div class="hero-copy" style="max-width:760px">
+<div class="crumb"><a href="insights.html">Insights</a> &nbsp;›&nbsp; Article</div>
+<div class="eyebrow">DATE · TOPIC</div>
+<h1 style="font-size:clamp(34px,4.2vw,52px)">Article title <mark>goes here.</mark></h1>
+<p class="hero-sub">One-sentence summary of the article.</p>
+</div></section>
+</div></div>
+<article class="wrap" style="max-width:760px;padding-top:80px;padding-bottom:96px;display:flex;flex-direction:column;gap:22px;font-size:18px;line-height:1.75;color:var(--ink-3)">
+<p>Article text goes here.</p>
+<h2 style="font-size:28px;margin-top:16px">Subheading</h2>
+<p>More text.</p>
+<p class="pull">Pull quote or key takeaway.</p>
+</article>
+<section class="light-bg"><div class="wrap" style="padding-top:64px;padding-bottom:64px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between">
+<div><h3 style="font-size:22px;font-weight:600;color:var(--navy)">Get the next issue in your inbox</h3><p style="color:var(--ink-2);font-size:16px">Notes from the field. Short and practical.</p></div>
+<a class="btn" href="insights.html#newsletter">Subscribe →</a>
+</div></section>
+<footer><div class="wrap">
+<span>© 2026 Kaiser CX Consulting · Berlin</span>
+<div class="links">
+<a href="mailto:christiane@kaiser-cx.com">christiane@kaiser-cx.com</a>
+<a href="impressum.html">Legal Notice</a>
+<a href="datenschutz.html">Privacy Policy</a>
+</div>
+</div></footer>
+</body>
+</html>
