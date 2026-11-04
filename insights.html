@@ -138,14 +138,7 @@ footer a{color:#c9dce8;text-decoration:none} footer a:hover{color:#fff}
 
 </main>
 
-<section class="wrap" id="articles" style="padding-bottom:120px">
-<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px;max-width:680px">
-<div style="font-size:12px;letter-spacing:.22em;font-weight:600;color:var(--mid);display:flex;align-items:center;gap:16px"><span style="width:40px;height:2px;background:var(--teal)"></span>ARTICLES</div>
-</div>
-<div class="arts">
-<a class="art" href="insight-article.html"><small>DATE · TOPIC</small><h3>Article title goes here</h3><p>Two-line teaser of the article. Replace with the first piece.</p><span>Read article →</span></a>
-</div>
-</section>
+
 
 <footer><div class="wrap">
 <span>© 2026 Kaiser CX Consulting · Berlin</span>
@@ -171,8 +164,8 @@ footer a{color:#c9dce8;text-decoration:none} footer a:hover{color:#fff}
 document.querySelectorAll('[data-gate]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();d.showModal()})});
 document.getElementById('dlx').onclick=function(){d.close()};
 f.addEventListener('submit',function(e){e.preventDefault();m.textContent='…';var fd=new FormData(f);fd.append('_subject','Case study download: Rail-Flow');
-fetch('https://formspree.io/f/xpqolplw',{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(function(r){
-if(!r.ok)throw 0;var a=document.createElement('a');a.href='Rail-Flow-Case-Study.pdf';a.download='';document.body.appendChild(a);a.click();a.remove();m.textContent='Thank you. Your download has started.';f.reset();setTimeout(function(){d.close();m.textContent=''},2200)}).catch(function(){m.textContent='Something went wrong. Please email christiane@kaiser-cx.com.'})})})();
+var go=function(){var a=document.createElement('a');a.href='Rail-Flow-Case-Study.pdf';a.target='_blank';a.download='Rail-Flow-Case-Study.pdf';document.body.appendChild(a);a.click();a.remove();m.textContent='Thank you. Your download has started.';f.reset();setTimeout(function(){d.close();m.textContent=''},2200)};
+fetch('https://formspree.io/f/xpqolplw',{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(go,go)})})();
 </script>
 <script>
 document.getElementById('nlf').addEventListener('submit',function(e){e.preventDefault();var f=this,m=document.getElementById('nlm');
