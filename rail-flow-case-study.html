@@ -311,8 +311,8 @@ footer a{color:#c9dce8;text-decoration:none}footer a:hover{color:#fff}
 document.querySelectorAll('[data-gate]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();d.showModal()})});
 document.getElementById('dlx').onclick=function(){d.close()};
 f.addEventListener('submit',function(e){e.preventDefault();m.textContent='…';var fd=new FormData(f);fd.append('_subject','Case study download: Rail-Flow');
-fetch('https://formspree.io/f/xpqolplw',{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(function(r){
-if(!r.ok)throw 0;var a=document.createElement('a');a.href='Rail-Flow-Case-Study.pdf';a.download='';document.body.appendChild(a);a.click();a.remove();m.textContent='Thank you. Your download has started.';f.reset();setTimeout(function(){d.close();m.textContent=''},2200)}).catch(function(){m.textContent='Something went wrong. Please email christiane@kaiser-cx.com.'})})})();
+var go=function(){var a=document.createElement('a');a.href='Rail-Flow-Case-Study.pdf';a.target='_blank';a.download='Rail-Flow-Case-Study.pdf';document.body.appendChild(a);a.click();a.remove();m.textContent='Thank you. Your download has started.';f.reset();setTimeout(function(){d.close();m.textContent=''},2200)};
+fetch('https://formspree.io/f/xpqolplw',{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(go,go)})})();
 </script>
 </body>
 </html>
